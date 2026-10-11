@@ -1,8 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!-- 									RELICS 									-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 									  OLD GUARD TURRETS 		  								-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+
+<animSheet name="turret_rail_kaiju_icon" w="153" h="54" fw="153" fh="54">weapons_og/turret_rail_kaiju_icon.png</animSheet>
+<anim name="turret_rail_kaiju_icon">
+	<sheet>turret_rail_kaiju_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="turret_rail_kaiju_heatup" w="4746" h="226" fw="226" fh="226">weapons_og/turret_rail_kaiju_heatup.png</animSheet>
+<anim name="turret_rail_kaiju_heatup">
+	<sheet>turret_rail_kaiju_heatup</sheet>
+	<desc length="21" x="0" y="0"/>
+	<time>2.1</time>
+</anim>
+<animSheet name="turret_rail_kaiju_charging" w="2260" h="226" fw="226" fh="226">weapons_og/turret_rail_kaiju_charging.png</animSheet>
+<anim name="turret_rail_kaiju_charging">
+	<sheet>turret_rail_kaiju_charging</sheet>
+	<desc length="10" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="turret_rail_kaiju_charging_charged" w="2260" h="226" fw="226" fh="226">weapons_og/turret_rail_kaiju_charging.png</animSheet>
+<anim name="turret_rail_kaiju_charging_charged">
+	<sheet>turret_rail_kaiju_charging_charged</sheet>
+	<desc length="10" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="turret_rail_kaiju_charging_glow" w="3164" h="226" fw="226" fh="226">weapons_og/turret_rail_kaiju_charging_glow.png</animSheet>
+<anim name="turret_rail_kaiju_charging_glow">
+	<sheet>turret_rail_kaiju_charging_glow</sheet>
+	<desc length="14" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="turret_rail_kaiju_firing" w="2486" h="226" fw="226" fh="226">weapons_og/turret_rail_kaiju_firing.png</animSheet>
+<anim name="turret_rail_kaiju_firing">
+	<sheet>turret_rail_kaiju_firing</sheet>
+	<desc length="11" x="0" y="0"/>
+	<time>0.125</time>
+</anim>
+
+<animSheet name="turret_rail_thyrsus_icon" w="123" h="73" fw="123" fh="73">weapons_og/turret_rail_thyrsus_icon.png</animSheet>
+<anim name="turret_rail_thyrsus_icon">
+	<sheet>turret_rail_thyrsus_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="turret_rail_thyrsus_firing" w="1428" h="204" fw="204" fh="204">weapons_og/turret_rail_thyrsus_firing.png</animSheet>
+<anim name="turret_rail_thyrsus_firing">
+	<sheet>turret_rail_thyrsus_firing</sheet>
+	<desc length="7" x="0" y="0"/>
+	<time>0.125</time>
+</anim>
+<animSheet name="turret_rail_thyrsus_charging_glow" w="816" h="204" fw="204" fh="204">weapons_og/turret_rail_thyrsus_charging_glow.png</animSheet>
+<anim name="turret_rail_thyrsus_charging_glow">
+	<sheet>turret_rail_thyrsus_charging_glow</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+
+<animSheet name="turret_plasma_athena_icon" w="98" h="56" fw="98" fh="56">weapons_og/turret_plasma_athena_icon.png</animSheet>
+<anim name="turret_plasma_athena_icon">
+	<sheet>turret_plasma_athena_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="turret_plasma_athena_charging" w="2376" h="132" fw="132" fh="132">weapons_og/turret_plasma_athena_charging.png</animSheet>
+<anim name="turret_plasma_athena_charging">
+	<sheet>turret_plasma_athena_charging</sheet>
+	<desc length="18" x="0" y="0"/>
+	<time>3</time>
+</anim>
+<animSheet name="turret_plasma_athena_firing" w="528" h="132" fw="132" fh="132">weapons_og/turret_plasma_athena_firing.png</animSheet>
+<anim name="turret_plasma_athena_firing">
+	<sheet>turret_plasma_athena_firing</sheet>
+	<desc length="4" x="0" y="0"/>
+	<time>0.1</time>
+</anim>
+
+<animSheet name="turret_xbow_artemis_icon" w="118" h="84" fw="118" fh="84">weapons_og/turret_xbow_artemis_icon.png</animSheet>
+<anim name="turret_xbow_artemis_icon">
+	<sheet>turret_xbow_artemis_icon</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="turret_xbow_artemis_firing" w="4480" h="128" fw="128" fh="128">weapons_og/turret_xbow_artemis_firing.png</animSheet>
+<anim name="turret_xbow_artemis_firing">
+	<sheet>turret_xbow_artemis_firing</sheet>
+	<desc length="35" x="0" y="0"/>
+	<time>1.4</time>
+</anim>
+<animSheet name="turret_xbow_artemis_charging" w="2816" h="128" fw="128" fh="128">weapons_og/turret_xbow_artemis_charging.png</animSheet>
+<anim name="turret_xbow_artemis_charging">
+	<sheet>turret_xbow_artemis_charging</sheet>
+	<desc length="22" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<!--
+<animSheet name="co_kaiju_proj" w="51" h="7" fw="51" fh="7">weapons_og/co_kaiju_proj.png</animSheet>
+<anim name="co_kaiju_proj">
+	<sheet>co_kaiju_proj</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="co_adapter_proj" w="51" h="7" fw="51" fh="7">weapons_og/co_adapter_proj.png</animSheet>
+<anim name="co_adapter_proj">
+	<sheet>co_adapter_proj</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
+<animSheet name="co_artemis_proj" w="35" h="3" fw="35" fh="3">weapons_og/co_artemis_proj.png</animSheet>
+<anim name="co_artemis_proj">
+	<sheet>co_artemis_proj</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>-->
+
+
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 											TEST 												-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+
+<animSheet name="oc_minelayer_ripper" w="714" h="164" fw="51" fh="164">weapons/oc_minelayer_ripper.png</animSheet>
+<weaponAnim name="oc_minelayer_ripper">
+	<sheet>oc_minelayer_ripper</sheet>
+	<desc length="14" x="0" y="0"/>
+	<chargedFrame>5</chargedFrame>
+	<fireFrame>6</fireFrame>
+	<firePoint  x="37" y="15"/>
+	<mountPoint x="15" y="115"/>
+</weaponAnim>
+
+<!--
+<animSheet name="turret_rail_kaiju_heatup" w="3401" h="113" fw="179" fh="113">test/turret_rail_kaiju_heatup.png</animSheet>
+<anim name="turret_rail_kaiju_heatup">
+	<sheet>turret_rail_kaiju_heatup</sheet>
+	<desc length="19" x="0" y="0"/>
+	<time>1.9</time>
+</anim>
+<animSheet name="turret_rail_kaiju_charging" w="1790" h="113" fw="179" fh="113">test/turret_rail_kaiju_charging.png</animSheet>
+<anim name="turret_rail_kaiju_charging">
+	<sheet>turret_rail_kaiju_charging</sheet>
+	<desc length="10" x="0" y="0"/>
+	<time>0.8</time>
+</anim>
+<animSheet name="turret_rail_kaiju_firing" w="1790" h="113" fw="179" fh="113">test/turret_rail_kaiju_firing.png</animSheet>
+<anim name="turret_rail_kaiju_firing">
+	<sheet>turret_rail_kaiju_firing</sheet>
+	<desc length="10" x="0" y="0"/>
+	<time>0.125</time>
+</anim>
+-->
+
+
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 											RELICS 												-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <animSheet name="oc_minelayer_ripper" w="714" h="164" fw="51" fh="164">weapons/oc_minelayer_ripper.png</animSheet>
 <weaponAnim name="oc_minelayer_ripper">
@@ -691,7 +845,127 @@
 	<time>1.0</time>
 </anim>
 
-
+<animSheet name="co_human_ravager_cache" w="350" h="490" fw="35" fh="35">people/co_human_ravager_cache_base.png</animSheet>
+<anim name="co_human_ravager_cache_death_right">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="5" x="3" y="0"/>
+	<time>0.75</time>
+</anim>
+<anim name="co_human_ravager_cache_death_left">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="5" x="3" y="0"/>
+	<time>0.75</time>
+</anim>
+<anim name="co_human_ravager_cache_walk_down">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="0" y="13"/>
+	<time>1.0</time>
+</anim>
+<anim name="co_human_ravager_cache_walk_right">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="4" y="13"/>
+	<time>1.0</time>
+</anim>
+<anim name="co_human_ravager_cache_walk_up">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="0" y="12"/>
+	<time>1.0</time>
+</anim>
+<anim name="co_human_ravager_cache_walk_left">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="4" y="12"/>
+	<time>1.0</time>
+</anim>
+<anim name="co_human_ravager_cache_shoot_down">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="0" y="11"/>
+	<time>0.1</time>
+</anim>
+<anim name="co_human_ravager_cache_shoot_right">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="4" y="11"/>
+	<time>0.1</time>
+</anim>
+<anim name="co_human_ravager_cache_shoot_up">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="0" y="10"/>
+	<time>0.1</time>
+</anim>
+<anim name="co_human_ravager_cache_shoot_left">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="4" y="10"/>
+	<time>0.1</time>
+</anim>
+<anim name="co_human_ravager_cache_fire_down">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="5" x="0" y="9"/>
+	<time>0.8</time>
+</anim>
+<anim name="co_human_ravager_cache_fire_right">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="5" x="4" y="9"/>
+	<time>0.8</time>
+</anim>
+<anim name="co_human_ravager_cache_fire_up">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="5" x="0" y="8"/>
+	<time>0.8</time>
+</anim>
+<anim name="co_human_ravager_cache_fire_left">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="5" x="4" y="8"/>
+	<time>0.8</time>
+</anim>
+<anim name="co_human_ravager_cache_repair">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="9" x="0" y="7"/>
+	<time>1.0</time>
+</anim>
+<anim name="co_human_ravager_cache_punch_down">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="10" x="0" y="6"/>
+	<time>1</time>
+</anim>
+<anim name="co_human_ravager_cache_punch_up">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="10" x="0" y="5"/>
+	<time>1</time>
+</anim>
+<anim name="co_human_ravager_cache_type_right">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="0" y="4"/>
+	<time>0.75</time>
+</anim>
+<anim name="co_human_ravager_cache_type_left">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="4" y="4"/>
+	<time>0.75</time>
+</anim>
+<anim name="co_human_ravager_cache_type_up">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="0" y="3"/>
+	<time>0.75</time>
+</anim>
+<anim name="co_human_ravager_cache_type_down">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="4" x="4" y="3"/>
+	<time>0.75</time>
+</anim>
+<anim name="co_human_ravager_cache_teleport">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="10" x="0" y="2"/>
+	<time>0.5</time>
+</anim>
+<anim name="co_human_ravager_cache_clone">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="6" x="0" y="1"/>
+	<time>0.75</time>
+</anim>
+<anim name="co_human_ravager_cache_portrait">
+	<sheet>co_human_ravager_cache</sheet>
+	<desc length="1" x="0" y="0"/>
+	<time>1</time>
+</anim>
 
 
 <animSheet name="co_ravager_fatum_aurora" w="280" h="210" fw="35" fh="35">people/co_ravager_fatum_aurora_base.png</animSheet>

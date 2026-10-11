@@ -12,13 +12,15 @@
 
 <text name="co_tip_trigger">In the final moment of the shot the beam can set hit room on fire and deals 1 damage.</text>
 <text name="co_tip_destructor">In the final moment of the shot the beam inflicts more erosion and deals 2 damage.</text>
-<text name="co_tip_athena">In the final moment of the shot the beam inflicts more erosion and deals 1 damage.</text>
+<text name="co_tip_athena">The last shot in each burst inflicts more erosion and deals 1 damage.</text>
 
 <text name="co_tip_prometheus">Within each burst, each shot has a 10% increased chance to start a fire.</text>
 <text name="co_tip_helios">Enemy's hull and engines are dealt additional damage if all projectiles in a single burst hit the hull.</text>
-<text name="co_tip_helios">With each charge, this weapon decreases its shot radius and increases the projectile's speed. When it reaches its final charge, it overheats, resetting the cooldown, and your weapon control will burst into flames.</text>
+<text name="co_tip_assembler">With each charge, this weapon decreases its shot radius and increases the projectile's speed. When it reaches its final charge, it overheats, resetting the cooldown, and your weapon control will burst into flames.</text>
 <text name="co_tip_quasar">For each room hit, the charge time of the next shot is reduced by 5%.</text>
 <text name="co_tip_pulsar">For each room hit, the shield piercing of the next shot is increased by 2.5%.</text>
+
+<text name="co_tip_lucifer">WFor every burst that fully hit the enemy, regenerates 0.5 charges.</text>
 
 <text name="co_tip_yongwang">While powered, this weapon fires more shots the more engines and shields are powered, powered artillery drastically decreases the bonus.</text>
 

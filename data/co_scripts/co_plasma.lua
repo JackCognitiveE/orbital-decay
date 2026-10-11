@@ -5,10 +5,6 @@ local userdata_table = mods.multiverse.userdata_table
 local vter = mods.multiverse.vter
 
 
--- most of this code is arc's code which i borrowed
--- play his addons you must 👁
-
-
 local co_aurora_beam = Hyperspace.Blueprints:GetWeaponBlueprint("CO_PLASMA_AURORA_BEAM")
 local co_aurora_beam_enemy = Hyperspace.Blueprints:GetWeaponBlueprint("CO_PLASMA_AURORA_BEAM_ENEMY")
 local co_athena_beam = Hyperspace.Blueprints:GetWeaponBlueprint("CO_PLASMA_ATHENA_BEAM")
@@ -164,6 +160,7 @@ end)
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
     local triggerWeaponData = nil
+    local athenaWeaponData = nil
     for weapon in vter(shipManager:GetWeaponList()) do
         pcall(function() triggerWeaponData = coTriggerLikeShoot[weapon.blueprint.name] end)
         if triggerWeaponData then
@@ -172,9 +169,6 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
                 perkDataTable.pChargeProgress = nil
             end
         end
-    end
-    local athenaWeaponData = nil
-    for weapon in vter(shipManager:GetWeaponList()) do
         pcall(function() athenaWeaponData = athenaEPRST[weapon.blueprint.name] end)
         if athenaWeaponData then
             local perkDataTable = userdata_table(weapon, "mods.athenaEPRST.shots")
@@ -184,8 +178,10 @@ script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManage
         end
     end
 end)
+
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
     local triggerWeaponData = nil
+    local athenaWeaponData = nil
     for weapon in vter(shipManager:GetWeaponList()) do
         pcall(function() triggerWeaponData = coTriggerLikeShoot[weapon.blueprint.name] end)
         if triggerWeaponData then
@@ -196,9 +192,6 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
                 end
             end
         end
-    end
-    local athenaWeaponData = nil
-    for weapon in vter(shipManager:GetWeaponList()) do
         pcall(function() athenaWeaponData = athenaEPRST[weapon.blueprint.name] end)
         if athenaWeaponData then
             local perkDataTable = userdata_table(weapon, "mods.athenaEPRST.shots")
@@ -207,4 +200,24 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
             end
         end
     end
+end)
+
+script.on_internal_event(Defines.InternalEvents.WEAPON_RENDERBOX, function(weapon, cooldown, maxCooldown, chargeString, damageString, shotLimitString)
+    if weapon.blueprint.name == "CO_PLASMA_ATHENA" then
+        local first, second = chargeString:match("([%d%.]+)%s*/%s*([%d%.]+)")
+        local third, fourth = chargeString:match("([%d%.]+)%s*/%s*([%d%.]+)")
+        fourth = 4
+        local overHeatData = nil
+        pcall(function() overHeatData = athenaEPRST[weapon.blueprint.name] end)
+        if overHeatData then
+            local oHTable = userdata_table(weapon, "mods.athenaEPRST.shots")
+            if oHTable.oHShots then
+                third = oHTable.oHShots // 8
+                chargeString = string.format("%.1f/%.1f", first, second) .. string.format(" | %.0f/%.0f", third, fourth)
+            end
+        else
+            --chargeString = string.format("%.1f/%.1f | %.2f/%.0f", first, second, fourth, fourth)
+        end
+    end
+    return Defines.Chain.CONTINUE, chargeString, damageString, shotLimitString
 end)

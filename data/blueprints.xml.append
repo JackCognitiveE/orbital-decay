@@ -1,8 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!-- 								TEST STUFF 									-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 										TEST STUFF 												-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+
+<weaponBlueprint name="OG_TURRET_RAIL_KAIJU">
+	<type>BEAM</type>
+	<flavorType>Turret</flavorType>
+	<tip>co_tip_kaiju</tip>
+	<title>Pulse Cannon 'Kaiju'</title>
+	<short>'Kaiju'</short>
+	<desc>Not so high-tech weapon developed by the Ravagers, but ideal for high-tonnage ships. Incredibly accurate and reliable, capable of dealing colossal damage when fully charged and kept on target. However, the enormous size of the cannon and the fact that the magazine is completely depleted when firing prevent it from being called a good means of defense.</desc>
+	<tooltip>Turret</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>200</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>turret_rail_kaiju_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="OG_TURRET_RAIL_THYRSUS">
+	<type>BEAM</type>
+	<flavorType>Turret</flavorType>
+	<tip>co_tip_thyrsus</tip>
+	<title>Rail Accelerator 'Thyrsus'</title>
+	<short>'Thyrsus'</short>
+	<desc>It's quite natural that the technologies of the Ravagers give their owner an advantage on the battlefield. But how exactly this happens still remains a mystery of many. The main things is that it works.</desc>
+	<tooltip>Turret</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>200</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>turret_rail_thyrsus_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="OG_TURRET_PLASMA_ATHENA">
+	<type>BEAM</type>
+	<flavorType>Turret</flavorType>
+	<title>Laser Revolver 'Athena'</title>
+	<short>'Athena'</short>
+	<tip>co_tip_artemis</tip>
+	<desc>The Ravagers's laser revolver is a real marvel at the junction of engineering craftsmanship and cutting-edge science. Thanks to its cylinder reloading system, it can maintain an aggressive rate of fire without overheating the weapon.</desc>
+	<tooltip>Turret</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>155</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>turret_plasma_athena_icon</iconReplace>
+</weaponBlueprint>
+
+<weaponBlueprint name="OG_TURRET_XBOW_ARTEMIS">
+	<type>BEAM</type>
+	<flavorType>Turret</flavorType>
+	<title>Crossbow 'Artemis'</title>
+	<short>'Artemis'</short>
+	<tip>co_tip_artemis</tip>
+	<desc>A unique weapon developed by the Ravagers, with contributions beyond just a machine "mind". This weapon, bearing a partial resemblance to old Earth crossbows, is used specifically to tag the top-priority target for annihilation in combat.</desc>
+	<tooltip>Turret</tooltip>
+	<damage>0</damage>
+	<sp>0</sp>
+	<cooldown>-1</cooldown>
+	<speed>0</speed>
+	<length>0</length>
+	<rarity>0</rarity>
+	<power>0</power>
+	<cost>155</cost>
+	<image>beam_contact</image>
+	<weaponArt>invisible</weaponArt>
+	<iconReplace>turret_xbow_artemis_icon</iconReplace>
+</weaponBlueprint>
+
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 										TEST STUFF 												-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <droneBlueprint name="DEFENSE_2">
 	<type>DEFENSE</type>
@@ -26,12 +114,66 @@
 </droneBlueprint>
 
 
+<!--
+<weaponBlueprint name="CO_RAIL_KAIJU">
+	<type>LASER</type>
+	<title>Pulse Cannon 'Kaiju'</title>
+	<short>'Kaiju'</short>
+	<tip>co_tip_kaiju</tip>
+	<desc>UOY T'NDLUOHD EES SHIT</desc>
+	<descriptionOverride>TESTTTTTTT
+	</descriptionOverride>
+	<tooltip>If all projectiles in a single burst hit the hull, every third projectile in the next burst gets 1 additional hull, system and crew damage. Firing with the perk active doesn't charge the perk.</tooltip>
+	<accuracyMod>35</accuracyMod>
+	<damage>1</damage>
+	<sysDamage>-1</sysDamage>
+	<persDamage>-1</persDamage>
+	<breachChance>2</breachChance>
+	<sp>2</sp>
+	<shots>12</shots>
+	<cooldown>18</cooldown>
+	<power>6</power>
+	<speed>180</speed>
+	<cost>160</cost>
+	<image>co_kaiju_proj</image>
+	<fireTime>0.095</fireTime>
+	<rarity>0</rarity>
+	
+	<co-customAnimations>
+        <turret_rail_kaiju_charging charging="true" charged="true" />
+        <turret_rail_kaiju_heatup charging="true" looping="false" />
+        <turret_rail_kaiju_firing firing="true" />
+    </co-customAnimations>
+	
+	<launchSounds>
+		<sound>co_kaiju_shot</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull2</sound>
+		<sound>hitHull3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>co_rail_kaiju_wth</weaponArt>
+	<iconImage>laser</iconImage>
+</weaponBlueprint>
+-->
 
 
 
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 									RELICS 										-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <crewBlueprint name="co_ripper_disk">
 	<title>Disk</title>
@@ -102,13 +244,13 @@
 
 
 
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 								CREW DRONES									-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <crewBlueprint name="co_drone_ballista">
 	<title>Ballista Drone</title>
@@ -241,13 +383,13 @@ A special model of ballista drone invented by the Legion. With the use of aether
 
 
 
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 							LEGION ARTILLERIES								-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 
 <weaponBlueprint name="CO_ARTILLERY_LEGION_GUARD">
@@ -428,13 +570,13 @@ A special model of ballista drone invented by the Legion. With the use of aether
 </weaponBlueprint>
 
 
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 							LEGION WEAPONS									-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 
 <weaponBlueprint name="CO_ZENITH_2">
@@ -872,13 +1014,13 @@ A special model of ballista drone invented by the Legion. With the use of aether
 	<iconImage>missile</iconImage>
 </weaponBlueprint>
 
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 							LEGION DRONES									-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <weaponBlueprint name="CO_ZENITH_DRONE_LASER_1">
 	<type>LASER</type>
@@ -1009,13 +1151,13 @@ A special model of ballista drone invented by the Legion. With the use of aether
 
 
 
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 				RAVAGER CREEEEEEEEEEEEEEEEEW	(and LAB UPGRADES)			-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <augBlueprint name="CO_LAB_RAVAGER_FOCUSING">
 	<title>Target Focusing</title>
@@ -1033,13 +1175,40 @@ A special model of ballista drone invented by the Legion. With the use of aether
 	<stackable>true</stackable>
 </augBlueprint>
 
+
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 											1 STAGE												-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+
+<crewBlueprint name="co_human_ravager_cache">
+	<desc>Strike the enemy with his own weapon - this is the truth Cache learned behind the wheel of a Ravager. He has complete control over it, but of course Cache doesn't remember how he did it. People avoid him, and he is not too upset about it. After all, no one distracts him from the goal - to destroyer all the Ravagers.
+Armed with an 'Adapter'-based pulse minigun and a circular saw.
+
+01110111 01101001 01101100 01101100</desc>
+	<cost>100</cost>
+	<title>RNS1MP-CACHE</title>
+	<short>Cache</short>
+	<rarity>0</rarity>
+	<powerList>
+		<power>Active Ability: Summons a temporary turret</power>
+		<power>150 HP, 0.7x all damage taken, inherited human hazard resistances</power>
+		<power>His determination to take revenge on the Ravagers prevents him from being mind-controlled</power>
+		<power>1.5x melee damage, 0.2x ranged damage, 0.3x sabotage speed, 10x shooting speed</power>
+		<power>Deals more damage the more damage he has taken</power>
+		<power>Targeted Ravagers take 1.5x combat damage</power>
+	</powerList>
+</crewBlueprint>
+
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 											2 STAGE												-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <crewBlueprint name="co_ravager_fatum_aurora">
 	<desc>"The Ravagers.. It's like I'm conducting their music. Every move, every order is executed impreccably. We are one. One... But we need resources. The power such as ours requires all the #4|7!verse can offer!"
 
 This robotic spider, completely subservient to the Ravager Mind, can be a serious obstacle on the battlefield. If it's not on your side, it's best to prevent them from gathering.
 Equipped with the Laser Minigun 'Aurora'.</desc>
-	<cost>110</cost>
+	<cost>90</cost>
 	<title>Ravager, M1FT1A</title>
 	<short>'Fatum' [A]</short>
 	<rarity>0</rarity>
@@ -1055,7 +1224,7 @@ Equipped with the Laser Minigun 'Aurora'.</desc>
 
 This robotic spider, completely subservient to the Ravager Mind, can be a serious obstacle on the battlefield. If it's not on your side, it's best to prevent them from gathering.
 Equipped with the Plasma Cutter 'Blockchain'.</desc>
-	<cost>115</cost>
+	<cost>92</cost>
 	<title>Ravager, M2FT1B</title>
 	<short>'Fatum' [B]</short>
 	<rarity>0</rarity>
@@ -1072,7 +1241,7 @@ Equipped with the Plasma Cutter 'Blockchain'.</desc>
 
 This robotic spider, completely subservient to the Ravager Mind, can be a serious obstacle on the battlefield. If it's not on your side, it's best to prevent them from gathering.
 Equipped with the Tesla Emitter 'Flash'.</desc>
-	<cost>120</cost>
+	<cost>95</cost>
 	<title>Ravager, M3FT3F1</title>
 	<short>'Fatum' [F]</short>
 	<rarity>0</rarity>
@@ -1085,6 +1254,11 @@ Equipped with the Tesla Emitter 'Flash'.</desc>
 	</powerList>
 </crewBlueprint>
 
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 											3 STAGE												-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+
+
 
 <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
@@ -1093,6 +1267,45 @@ Equipped with the Tesla Emitter 'Flash'.</desc>
 <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+
+
+<blueprintList name="CO_RAVAGER_WEAPONS_ALL">
+	<name>CO_RAIL_ADAPTER</name>
+	<name>CO_RAIL_CHARON</name>
+	<name>CO_RAIL_THYRSUS</name>
+	
+	<name>CO_PLASMA_AURORA</name>
+	<name>CO_PLASMA_TRIGGER</name>
+	<name>CO_PLASMA_DESTRUCTOR</name>
+	
+	<name>CO_EMITTER_PROMETHEUS</name>
+	<name>CO_EMITTER_HELIOS</name>
+	
+	<!--			0.2.0			-->
+	<name>CO_RAIL_ASTREAUS</name>
+	<name>CO_RAIL_ACARI</name>
+	<name>CO_RAIL_KAIJU</name>
+	
+	<name>CO_PLASMA_ATHENA</name>
+	
+	<!--			0.3.0			
+	<name>CO_EMITTER_QUASAR</name>
+	<name>CO_EMITTER_PULSAR</name>
+	<name>CO_EMITTER_ASSEMBLER</name>
+	
+	<name>CO_XBOW_ARTEMIS</name>-->
+	
+	<!--			0.4.0
+	
+	<!--<name>CO_PLASMA_YOKAI</name>		Plasma Rocket Launcher
+	<name>CO_ROCKET_LUCIFER</name>
+	
+	<name>CO_GRENADE_YONGWANG</name>-->
+	
+	<!--
+	<name>CO_RAIL_RAIJIN</name>				Rail Cannon			-->			
+</blueprintList>
+
 
 <weaponBlueprint name="CO_RAVAGER_CONTAINER_EPIC">
 	<type>BEAM</type>
@@ -1140,9 +1353,8 @@ It's unclear whether it's safe to interact with, but there's bound to be somethi
 	<name>CO_PLASMA_AURORA</name>
 	<name>CO_PLASMA_TRIGGER</name>
 	<name>CO_EMITTER_PROMETHEUS</name>
-	<name>CO_EMITTER_QUASAR</name>
-	<name>CO_GRENADE_YONGWANG</name>
-	<!--<name>CO_PLASMA_YOKAI</name>		Plasma Rocket Launcher
+	<!--<name>CO_EMITTER_QUASAR</name>
+	<name>CO_PLASMA_YOKAI</name>		Plasma Rocket Launcher
 	<name>CO_RAIL_RAIJIN</name>				Rail Cannon			-->			
 </blueprintList>
 <blueprintList name="CO_RAVAGER_CONTAINER_LEGEND_POOL">
@@ -1152,31 +1364,10 @@ It's unclear whether it's safe to interact with, but there's bound to be somethi
 	<name>CO_PLASMA_DESTRUCTOR</name>
 	<name>CO_PLASMA_ATHENA</name>
 	<name>CO_EMITTER_HELIOS</name>
-	<name>CO_EMITTER_PULSAR</name>
+	<!--<name>CO_EMITTER_PULSAR</name>
 	<name>CO_ROCKET_LUCIFER</name>
 	<name>CO_EMITTER_ASSEMBLER</name>
-	<!--<name>CO_EMITTER_PULSAR</name>			Plasma Cannon		-->		
-</blueprintList>
-<blueprintList name="CO_RAVAGER_CONTAINER_RANDOM_POOL">
-	<!-- EPIC WEAPONS -->
-	<name>CO_RAIL_ADAPTER</name>
-	<name>CO_RAIL_ASTREAUS</name>
-	<name>CO_RAIL_ACARI</name>
-	<name>CO_PLASMA_AURORA</name>
-	<name>CO_PLASMA_TRIGGER</name>
-	<name>CO_EMITTER_PROMETHEUS</name>
-	<name>CO_EMITTER_QUASAR</name>
-	<name>CO_GRENADE_YONGWANG</name>
-	<!-- LEGEND WEAPONS -->
-	<name>CO_RAIL_CHARON</name>
-	<name>CO_RAIL_THYRSUS</name>
-	<name>CO_RAIL_KAIJU</name>
-	<name>CO_PLASMA_DESTRUCTOR</name>
-	<name>CO_PLASMA_ATHENA</name>
-	<name>CO_EMITTER_HELIOS</name>
-	<name>CO_EMITTER_PULSAR</name>
-	<name>CO_EMITTER_ASSEMBLER</name>
-	<name>CO_ROCKET_LUCIFER</name>
+	<name>CO_EMITTER_PULSAR</name>			Plasma Cannon		-->		
 </blueprintList>
 
 <blueprintList name="CO_RAVAGER_WEAPONS_EPIC_RAIL">
@@ -1200,12 +1391,8 @@ It's unclear whether it's safe to interact with, but there's bound to be somethi
 	<name>CO_EMITTER_PROMETHEUS</name>
 	<name>CO_EMITTER_PROMETHEUS</name>
 	<name>CO_EMITTER_PROMETHEUS</name>
-	<name>CO_EMITTER_QUASAR</name>
-	<name>CO_EMITTER_QUASAR</name>
-</blueprintList>
-<blueprintList name="CO_RAVAGER_WEAPONS_EPIC_NOCAT">
-	<name>CO_GRENADE_YONGWANG</name>
-	<name>CO_RAVAGER_CONTAINER_EPIC</name>
+	<!--<name>CO_EMITTER_QUASAR</name>
+	<name>CO_EMITTER_QUASAR</name>-->
 </blueprintList>
 
 <blueprintList name="CO_RAVAGER_WEAPONS_LEGEND_RAIL">
@@ -1223,21 +1410,16 @@ It's unclear whether it's safe to interact with, but there's bound to be somethi
 	<name>CO_EMITTER_HELIOS</name>
 	<name>CO_EMITTER_HELIOS</name>
 	<name>CO_EMITTER_HELIOS</name>
-	<name>CO_EMITTER_PULSAR</name>
+	<!--<name>CO_EMITTER_PULSAR</name>
 	<name>CO_EMITTER_PULSAR</name>
 	<name>CO_EMITTER_ASSEMBLER</name>
-	<name>CO_EMITTER_ASSEMBLER</name>
-</blueprintList>
-<blueprintList name="CO_RAVAGER_WEAPONS_LEGEND_NOCAT">
-	<name>CO_ROCKET_LUCIFER</name>
-	<name>CO_XBOW_ARTEMIS</name>
-	<name>CO_RAVAGER_CONTAINER_LEGEND</name>
+	<name>CO_EMITTER_ASSEMBLER</name>-->
 </blueprintList>
 <blueprintList name="CO_RAVAGER_WEAPONS_LEGEND_ARTI">
 	<name>CO_RAIL_CHARON</name>
-	<name>CO_EMITTER_PULSAR</name>
+	<!--<name>CO_EMITTER_PULSAR</name>
 	<name>CO_ROCKET_LUCIFER_ARTI</name>
-	<name>CO_XBOW_ARTEMIS</name>
+	<name>CO_XBOW_ARTEMIS</name>-->
 </blueprintList>
 
 
@@ -1591,8 +1773,8 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 	<title>Pulse Cannon 'Kaiju'</title>
 	<short>'Kaiju'</short>
 	<tip>co_tip_kaiju</tip>
-	<desc>UOY T'NDLUOHD EES SHIT</desc>  <!-- ~40% crossout desc-->
-	<descriptionOverride>Not so hich-tech weapon developed by the Ravagers, however ideal for high-tonnage ships. Incredibly accurate and reliable, capable of dealing colossal damage when fully charged and kept on target.
+	<desc>UOY T'NDLUOHD EES SHIT</desc>   <!--~40% crossout desc -->
+	<descriptionOverride>Not so high-tech weapon developed by the Ravagers, however ideal for high-tonnage ships. Incredibly accurate and reliable, capable of dealing colossal damage when fully charged and kept on target.
 
 		Stats:
 		Required Power: 6
@@ -1680,6 +1862,7 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 		Required Power: 2
 		Charge Time: 12 seconds
 		Accuracy Bonus: +20%
+		Missile Consumption: 1
 		
 		Shots Per Charge: 1
 		
@@ -1787,7 +1970,7 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 	<title>Crossbow 'Artemis'</title>
 	<short>'Artemis'</short>
 	<tip>co_tip_artemis</tip>
-	<desc>UOY T'NDLUOHD EES SHIT</desc> <!-- 0% crossout desc-->
+	<desc>UOY T'NDLUOHD EES SHIT</desc>
 	<descriptionOverride>A unique weapon developed by the Ravagers, with contributions beyond just a machine "mind". This weapon, bearing a partial resemblance to old Earth crossbows, is used specifically to tag the top-priority target for annihilation in combat.
 
 		Stats:
@@ -1810,9 +1993,7 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 		Default Price: 110~   -   Selling Price: 55~
 	</descriptionOverride>
 	<tooltip>Every 7 "Artemis" bolts attached to an enemy's hull apply an effect that increases the damage it takes from most non-beam weapons by 1.</tooltip>
-	<!--<damage>1</damage>
-	<sysDamage>-1</sysDamage>
-	<persDamage>-1</persDamage>-->
+
 	<mv-pop>
 		<count>1</count>
 		<countSuper>1</countSuper>
@@ -1865,12 +2046,12 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 	<weaponArt>co_xbow_artemis</weaponArt>
 	<iconImage>laser</iconImage>
 </weaponBlueprint>
-<weaponBlueprint name="CO_XBOW_ARTEMIS_ARTILLERY">
+<!--<weaponBlueprint name="CO_XBOW_ARTEMIS_ARTILLERY">
 	<type>LASER</type>
 	<title>Artillery Crossbow 'Artemis'</title>
 	<short>'Artemis'</short>
 	<tip>co_tip_artemis</tip>
-	<desc>UOY T'NDLUOHD EES SHIT</desc> <!-- 0% crossout desc-->
+	<desc>UOY T'NDLUOHD EES SHIT</desc>
 	<descriptionOverride>A unique weapon developed by the Ravagers, with contributions beyond just a machine "mind". This weapon, bearing a partial resemblance to old Earth crossbows, is used specifically to tag the top-priority target for annihilation in combat.
 
 		Stats:
@@ -1889,9 +2070,6 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 		Perk: Every 7 "Artemis" bolts attached to an enemy's hull apply an effect that increases the damage it takes from most non-beam weapons by 1.
 	</descriptionOverride>
 	<tooltip>Every 7 "Artemis" bolts attached to an enemy's hull apply an effect that increases the damage it takes from most non-beam weapons by 1.</tooltip>
-	<!--<damage>1</damage>
-	<sysDamage>-1</sysDamage>
-	<persDamage>-1</persDamage>-->
 	<mv-pop>
 		<count>1</count>
 		<countSuper>1</countSuper>
@@ -1942,7 +2120,7 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 	</missSounds>
 	<weaponArt>co_xbow_artemis</weaponArt>
 	<iconImage>laser</iconImage>
-</weaponBlueprint>
+</weaponBlueprint>-->
 
 
 <weaponBlueprint name="CO_PLASMA_AURORA">
@@ -2072,6 +2250,22 @@ Chaotic variant has decreased damage and increased cooldown, but fires bursts of
 	<title>Laser Revolver 'Athena'</title>
 	<short>'Athena'</short>
 	<desc>No desc. Yet</desc> <!-- 0% crossout desc-->
+	<descriptionOverride>The Ravagers's laser revolver is a real marvel at the junction of engineering craftsmanship and cutting-edge science. Thanks to its cylinder reloading system, it can maintain an aggressive rate of fire without overheating the weapon.
+
+		Stats:
+		Required Power: 3
+		Charge Time: 2 seconds
+		Cooling Time: 12.5 seconds
+		
+		Charges: 4
+		Shots Per Charge: 8
+		
+		Shield Piercing: 1
+
+		Perk: The last shot in each burst inflicts more erosion and deals 1 damage.
+		
+		Default Price: 75~   -   Selling Price: 37~
+	</descriptionOverride>
 	<damage>0</damage>
 	<projectiles>
 		<projectile count="1" fake="false">co_adapter_proj</projectile> 
@@ -2351,7 +2545,7 @@ For 1 second releases a beam that stacks erosion on the system hit dealing no ot
 		<time>5</time>
 		<maxTime>20.0</maxTime>
 		<systemRepairMultiplier>0.85</systemRepairMultiplier>
-		<erodeShields>true</erodeShields>
+		<erodeShields>false</erodeShields>
 	</erosion>
 	<image>beam_contact</image>
 	<weaponArt>co_plasma_destructor</weaponArt> 
@@ -2707,11 +2901,11 @@ Fires bursts of 5 projectiles made of overheated plasma that pop shields yet can
 </weaponBlueprint>
 
 
-<weaponBlueprint name="CO_ROCKET_LUCIFER">
+<!--<weaponBlueprint name="CO_ROCKET_LUCIFER">
 	<type>BURST</type>
 	<title>Rocket Revolver 'Lucifer'</title>
 	<short>'Lucifer'</short>
-	<desc>"I saw 9hosts t0DaY. They are in my dreams, in my thoughts. Is this reality or illusion? Y0ur identity in an illu51on. I 4M 3v3ryone 4nd no 0ne! We have to take the energy. I will lo5e My53lf soon, but I'm still holding on. We h4v3 to survive. This 2n the new m3. I hear his v0ic3 everywhere. The voice of my 53LF!"</desc> <!-- 95% crossout desc-->
+	<desc>"I saw 9hosts t0DaY. They are in my dreams, in my thoughts. Is this reality or illusion? Y0ur identity in an illu51on. I 4M 3v3ryone 4nd no 0ne! We have to take the energy. I will lo5e My53lf soon, but I'm still holding on. We h4v3 to survive. This 2n the new m3. I hear his v0ic3 everywhere. The voice of my 53LF!"</desc>
 	<drone_targetable>1</drone_targetable>
 	<shots>20</shots>
 	<radius>50</radius>
@@ -2755,7 +2949,78 @@ Fires bursts of 5 projectiles made of overheated plasma that pop shields yet can
 		<sound>miss</sound>
 	</missSounds>
 	<weaponArt>co_rocket_lucifer</weaponArt>
-</weaponBlueprint>
+</weaponBlueprint>-->
+<weaponBlueprint name="CO_ROCKET_LUCIFER">
+	<type>BURST</type>
+	<title>Rocket Revolver 'Lucifer'</title>
+	<short>'Lucifer'</short>
+	<desc>UOY T'NDLUOHD EES SHIT.</desc>
+	<descriptionOverride>"I saw 9hosts t0DaY. They are in my dreams, in my thoughts. Is this reality or illusion? Y0ur identity in an illu51on. I 4M 3v3ryone 4nd no 0ne! We have to take the energy. I will lo5e My53lf soon, but I'm still holding on. We h4v3 to survive. This 2n the new m3. I hear his v0ic3 everywhere. The voice of my 53LF!"
+
+		Stats:
+		Required Power: 3
+		Charge Time: 3 seconds
+		Cooling Time: 15 seconds
+		Missile Consumption: 1
+		Chance for Ammo Replication: 33%
+		
+		Charges: 5
+		Shots Per Charge: 4
+		
+		Base Hull Damage: 0.5
+		Total System Damage: 0.5
+		
+		Shield Piercing: 10
+
+		Perk: For every burst that fully hit the enemy, regenerates 0.5 charges.
+		
+		Default Price: 115~   -   Selling Price: 57~
+	</descriptionOverride>
+	<drone_targetable>1</drone_targetable>
+	<shots>4</shots>
+	<radius>40</radius>
+	<cooldown>3</cooldown>
+	<missiles>1</missiles>
+	<freeMissileChance>33</freeMissileChance>
+	<power>3</power>
+	<projectiles>
+		<projectile count="1" fake="false">co_lucifer_proj</projectile>
+	</projectiles>
+	<cost>115</cost>
+	<speed>60</speed>
+	<rarity>0</rarity>
+	<sp>10</sp>
+	<fireTime>0.125</fireTime>
+	<accuracyMod>10</accuracyMod>
+	<statBoosts>
+		<statBoost name="trueHealAmount">
+			<boostType>FLAT</boostType>
+			<amount>-500</amount>
+			<shipTarget>ALL</shipTarget>
+			<crewTarget>ALL</crewTarget>
+			<droneTarget>ALL</droneTarget>
+			<duration>0.01</duration>
+		</statBoost>
+	</statBoosts>
+	<launchSounds>
+		<sound>co_lucifer_shot_1</sound>
+		<sound>co_lucifer_shot_2</sound>
+		<sound>co_lucifer_shot_3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>co_rocket_lucifer</weaponArt>
+</weaponBlueprint>-->
+
 <weaponBlueprint name="CO_ROCKET_LUCIFER_ARTI">
 	<type>LASER</type>
 	<title>Rocket Revolver 'Lucifer'</title>
@@ -2863,13 +3128,13 @@ Fires bursts of 5 projectiles made of overheated plasma that pop shields yet can
 </weaponBlueprint>
 
 
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 							RAVAGER AUGMENTSSSS								-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 
 <augBlueprint name="CO_RAVAGER_SYSOPER">
@@ -2885,6 +3150,15 @@ Fires bursts of 5 projectiles made of overheated plasma that pop shields yet can
 	<title>Ravager Plating</title>
 	<desc>This hull plating automatically patches breaches and put out fires very fast, also absorbs 10% of scrap into the hull, repairing it. It will not take scrap when your hull is at full capacity.
 Ravagers became memorable not so much for their endurance, but for their ability to assimilate.</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<locked>true</locked>
+</augBlueprint>
+
+<augBlueprint name="CO_RAVAGER_PLATING_FORGOTTEN">
+	<title>Forgotten Ravager Plating</title>
+	<desc>Pee pee poo poo</desc>
 	<cost>0</cost>
 	<rarity>0</rarity>
 	<stackable>false</stackable>
@@ -2922,14 +3196,23 @@ When installed, shortens Cloaking cooldown by 15 second.</desc>
 	<locked>true</locked>
 </augBlueprint>
 
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!-- 							RAVAGER DRONESSSSSS								-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<augBlueprint name="CO_RAVAGER_PLATING_HUMPBACK">
+	<title>Humpback Plating</title>
+	<desc></desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<locked>true</locked>
+</augBlueprint>
 
+
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!-- 							RAVAGER DRONESSSSSS								-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <droneBlueprint name="CO_AURORA_DRONE">
 	<type>COMBAT</type>
@@ -2974,13 +3257,13 @@ When installed, shortens Cloaking cooldown by 15 second.</desc>
 </weaponBlueprint>
 
 
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 									SLAYERS DRONES										  -->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <blueprintList name="CO_LIST_CREW_SLAYERS_POWERARMOR">
 	<name>co_drone_slayersuit_melee</name>
@@ -3156,7 +3439,7 @@ When installed, shortens Cloaking cooldown by 15 second.</desc>
 	<type>COMBAT</type>
 	<title>Tackler Launcher Drone</title>
 	<short>Tackler Lau.</short>
-	<desc>A drone based on low‑power MLRS systems that were not very popular and entered mass production after a hazard was declared in abnormally dark regions of outer space.
+	<desc>A drone based on low-power MLRS systems that were not very popular and entered mass production after a hazard was declared in abnormally dark regions of outer space.
 It is ideal for suppressing both shields and systems without causing significant damage to the hull.</desc>
 	<power>2</power>
 	<cooldown>1000</cooldown>
@@ -3250,13 +3533,13 @@ It is ideal for suppressing both shields and systems without causing significant
 
 
 
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 									SLAYERS WEAPONS										  -->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <weaponBlueprint name="CO_SLAYER_LIGHTMISS_1">
 	<type>BURST</type>
@@ -3407,7 +3690,6 @@ Fires twice as many projectiles as MK I.</desc>
 	<title>MLRS 'Echelon' II</title>
 	<short>'Echelon' II</short>
 	<desc>YOU SHOULD NOT SEE THIS.</desc>
-	<radius>40</radius>
 	<drone_targetable>1</drone_targetable>
 	<sysDamage>1</sysDamage>
 	<mv-pop>
@@ -3415,14 +3697,14 @@ Fires twice as many projectiles as MK I.</desc>
 		<countSuper>1</countSuper>
 	</mv-pop>
 	<accuracyMod>5</accuracyMod>
-	<shots>1</shots>
-	<cooldown>12</cooldown>
+	<shots>4</shots>
+	<cooldown>15</cooldown>
 	<power>1</power>
 	<cost>75</cost>
 	<speed>40</speed>
 	<rarity>0</rarity>
 	<projectiles>
-		<projectile count="4" fake="false">co_slayers_lightmiss_proj</projectile>
+		<projectile count="1" fake="false">co_slayers_lightmiss_proj</projectile>
 	</projectiles>
 	<statBoosts>
 		<statBoost name="trueHealAmount">
@@ -3453,13 +3735,13 @@ Fires twice as many projectiles as MK I.</desc>
 </weaponBlueprint>
 
 
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 <!-- 							PLAYER SHIIIIPS									-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
+<!--	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||	-->
 
 <shipBlueprint name="CO_PLAYER_RAVAGER_FRIGATE_ASSAULT" layout="co_player_ravager_frigate_assault_a" img="co_player_ravager_frigate_assault_a">
 	<mv-mapImage>map_icon_co_player_ravager_frigate_assault_a</mv-mapImage>
@@ -3691,7 +3973,7 @@ Fires twice as many projectiles as MK I.</desc>
 		</shields>
 		<teleporter power="1" room="8" start="false" />
 		<temporal power="1" room="10" start="true" img="co_room_temporal_wide" />
-		<weapons power="4" max="12" room="9" start="true" img="co_room_weapons_verytall">
+		<weapons power="4" max="10" room="9" start="true" img="co_room_weapons_verytall">
 			<slot>
 				<direction>right</direction>
 				<number>1</number>
@@ -3710,249 +3992,3 @@ Fires twice as many projectiles as MK I.</desc>
 	<aug name="CO_RAVAGER_PLATING" />
 	<aug name="CO_RAVAGER_PROTOCOL" />
 </shipBlueprint>
-
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!-- 							SIGILS OF CAPRA									-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-
-<blueprintList name="CO_LIST_SIGIL_LR">
-	<name>CO_SIGIL_SCRAP_LR</name>
-	<name>CO_SIGIL_SHIELD_LR</name>
-	<name>CO_SIGIL_WEAPON_LR</name>
-	<name>CO_SIGIL_SENSOR_LR</name>
-	<name>CO_SIGIL_HEALING_LR</name>
-</blueprintList>
-<blueprintList name="CO_LIST_SIGIL_MR">
-	<name>CO_SIGIL_SCRAP_MR</name>
-	<name>CO_SIGIL_SHIELD_MR</name>
-	<name>CO_SIGIL_WEAPON_MR</name>
-	<name>CO_SIGIL_SENSOR_MR</name>
-	<name>CO_SIGIL_HEALING_MR</name>
-</blueprintList>
-<blueprintList name="CO_LIST_SIGIL_HR">
-	<name>CO_SIGIL_SCRAP_HR</name>
-	<name>CO_SIGIL_SHIELD_HR</name>
-	<name>CO_SIGIL_WEAPON_HR</name>
-	<name>CO_SIGIL_SENSOR_HR</name>
-	<name>CO_SIGIL_HEALING_HR</name>
-</blueprintList>
-<blueprintList name="CO_LIST_SIGIL_CURSES">
-	<name>CO_SIGIL_SCRAP_CURSE</name>
-	<name>CO_SIGIL_SHIELD_CURSE</name>
-	<name>CO_SIGIL_WEAPON_CURSE</name>
-	<name>CO_SIGIL_SENSOR_CURSE</name>
-	<name>CO_SIGIL_HEALING_CURSE</name>
-</blueprintList>
-
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--							LOW RISK SIGILS									-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-
-<augBlueprint name="CO_SIGIL_SCRAP_LR">
-	<title>Sigil of Stinginess</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's profit as a toll for a "quiet" life.
-Effect: -15% to scrap income.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_SHIELD_LR">
-	<title>Sigil of Ease</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "excuses".
-Effect: -15% to shield recharge speed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_WEAPON_LR">
-	<title>Sigil of Ease</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "excessiveness".
-Effect: -15% to weapon recharge speed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_SENSOR_LR">
-	<title>Sigil of Retina</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "peeking".
-Effect: -15% to shield recharge speed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_HEALING_LR">
-	<title>Sigil of Vitality</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for indulgent attitude to life.
-Effect: While Medbay is powered, crew will take damage anywhere on the ship at 25% speed of your current Medbay level. Cloning speed is always set to 15 second for all crew.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>false</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--							MEDIUM RISK SIGILS								-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-
-<augBlueprint name="CO_SIGIL_SCRAP_MR">
-	<title>Sigil of Poverty</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's profit as a toll for a "quiet" life.
-Effect: -25% to scrap income.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_SHIELD_MR">
-	<title>Sigil of Serenity</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "excuses".
-Effect: -25% to shield recharge speed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_WEAPON_MR">
-	<title>Sigil of Poverty</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "excessiveness".
-Effect: -25% to weapon recharge speed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_SENSOR_MR">
-	<title>Sigil of Stigma</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "peeking".
-Effect: Telepathic abilities no longer work in any form.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_HEALING_MR">
-	<title>Sigil of Purity</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for indulgent attitude to life.
-Effect: Onboard lab can no longer be used.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>false</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--							HIGH RISK SIGILS								-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-
-<augBlueprint name="CO_SIGIL_SCRAP_HR">
-	<title>Sigil of Greed</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's profit as a toll for a "quiet" life.
-Effect: -40% to scrap income.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_SHIELD_HR">
-	<title>Sigil of Frailty</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "excuses".
-Effect: -40% to shield recharge speed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_WEAPON_HR">
-	<title>Sigil of Helplessness</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "excessiveness".
-Effect: -40% to weapon recharge speed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_SENSOR_HR">
-	<title>Sigil of Blindness</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for "peeking".
-Effect: Your sensors are always zero-powered.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>false</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_HEALING_HR">
-	<title>Sigil of Mortality</title>
-	<desc>A pirate Sigil that absorbs part of its bearer's energy as a toll for indulgent attitude to life.
-Effect: Medbay and Clonebay upgrades can no longer be installed. All crew suffers from a 20% decrease in following parameters: maximum HP, movement speed, repair speed, healing speed, cloning speed, damage dealt.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>false</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--						LIFE INCOMPATIBLE SIGILS (CURSES)					-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-
-<augBlueprint name="CO_SIGIL_SCRAP_CURSE">
-	<title>Curse of Deprivation</title>
-	<desc>"You think money solves everything. But try to solve everything yourself..."
-Effect: -45% to scrap income. Arms cannot be installed.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_SHIELD_CURSE">
-	<title>Curse of Defenselessness</title>
-	<desc>"They say heroes don't wear capes. And you... aren't even a hero."
-Effect: -40% to shield recharge speed. Internal shield upgrades cannot be installed. </desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_WEAPON_CURSE">
-	<title>Curse of Unarmedness</title>
-	<desc>"Ever found yourself "David in the face of Goliath"? But they did."
-Effect: -40% to weapons recharge speed. Internal weapons upgrades cannot be installed. All weapons now require 1 more power.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>true</stackable>
-	<locked>true</locked>
-</augBlueprint>
-
-<augBlueprint name="CO_SIGIL_HEALING_CURSE">
-	<title>Curse of Lifelessness</title>
-	<desc>"Big man in a suit of armor. Take that off, what are you? ...A mortal."
-Effect: Medbay/Clonebay upgrades and the onboard lab cannot be installed. All crew are no longer able to use active abilities.</desc>
-	<cost>0</cost>
-	<rarity>0</rarity>
-	<stackable>false</stackable>
-	<locked>true</locked>
-</augBlueprint>

@@ -22,6 +22,9 @@
 
 
 <mod:findLike type="scripts">
+    <mod-append:script>data/co_scripts/co_custom_weapon_animations.lua</mod-append:script>
+    <mod-append:script>data/co_scripts/co_xog_turrets.lua</mod-append:script>
+
     <mod-append:script>data/co_scripts/co_plasma.lua</mod-append:script>
     <mod-append:script>data/co_scripts/co_emitters.lua</mod-append:script>
     <mod-append:script>data/co_scripts/co_rail.lua</mod-append:script>
@@ -686,6 +689,148 @@
 	</mod-append:race>
 
 
+		<mod-append:race name="co_human_ravager_cache">
+		<animSheet>co_human_ravager_cache</animSheet>
+		<maxHealth>150</maxHealth>
+		<damageMultiplier>1.5</damageMultiplier>
+		<rangedDamageMultiplier>0.2</rangedDamageMultiplier>
+		<damageTakenMultiplier>0.7</damageTakenMultiplier>
+		<fireDamageMultiplier>0.83</fireDamageMultiplier>
+		<suffocationModifier>0.83</suffocationModifier>
+		<animBase>mantis</animBase>
+		<defaultSkillLevel>1</defaultSkillLevel>
+		<skills>
+			<piloting req="999999"/>
+			<engines req="999999"/>
+			<shields req="999999"/>
+			<weapons req="999999"/>
+			<repair req="999999"/>
+			<combat req="999999"/>
+		</skills>
+		<passiveStatBoosts>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.9"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.8"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.7"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.6"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.5"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.4"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.3"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.2"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+			<statBoost name="damageMultiplier">
+				<boostType>MULT</boostType>
+				<shipTarget>ALL</shipTarget>
+				<crewTarget>SELF</crewTarget>
+				<droneTarget>SELF</droneTarget>
+				<healthFractionReq below="0.1"/>
+				<amount>1.15</amount>
+				<priority>0</priority>
+			</statBoost>
+		</passiveStatBoosts>
+		<!--	<powerEffect>
+			<cooldown>25</cooldown>
+			<jumpCooldown>full</jumpCooldown>
+			<powerSounds>
+				<powerSound>droneLaunch</powerSound>
+			</powerSounds>
+			<req type="enemy">
+				<enemyInRoom/>
+			</req>
+			<buttonText>DRONE</buttonText>
+			<tooltip>[COOLDOWN:25s]
+				Spawns a temporary Commit drone ally which moves slowly, but can only fight if there is an allied crew in the same room, but not sabotage, repair or man systems. Lasts 30 seconds.</tooltip>
+			<cooldownColor r="185" g="185" b="185"/>
+			<activateWhenReady enemiesOnly="true">true</activateWhenReady>
+			<powerCharges>2</powerCharges>
+			<initialCharges>2</initialCharges>
+			<chargesPerJump>1</chargesPerJump>
+			<spawnCrew>
+				<number>1</number>
+				<race>co_drone_commit</race>
+				<lifetime>30</lifetime>
+				<statBoosts>
+					<statBoost name="noClone">
+						<boostType>SET</boostType>
+						<value>true</value>
+						<shipTarget>ALL</shipTarget>
+						<crewTarget>ALL</crewTarget>
+						<priority>999999</priority>
+					</statBoost>
+				</statBoosts>
+			</spawnCrew>
+		</powerEffect>	-->
+		<shootingSounds>
+			<shootingSound>co_adapter_cache_shot</shootingSound>
+		</shootingSounds>
+		<deathSounds>
+			<deathSound>death1</deathSound>
+			<deathSound>death2</deathSound>
+		</deathSounds>
+	</mod-append:race>
+
 
 	<mod-append:race name="co_ravager_fatum_aurora">
 		<animSheet>co_ravager_fatum_aurora</animSheet>
@@ -1018,6 +1163,7 @@
 <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
 
 <mod:findLike type="augments" limit="1">
+
 	<mod-append:aug name="CO_RAVAGER_SYSOPER">
 		<function name="AUTOMATED_SHIP" value="1" useForReqs="false" warning="false"/>
 		<function name="AUTOMATED_REPAIR" value="3" useForReqs="false"/>
@@ -1025,6 +1171,7 @@
 		<icon>icon_co_ravager_auto</icon>
 		<locked/>
 	</mod-append:aug>
+	
 	<mod-append:aug name="CO_RAVAGER_PLATING">
     	<function name="REPAIR_ARM" value="0.1" useForReqs="false"/>
     	<function name="SLUG_GEL" value="1.5" useForReqs="false"/>
@@ -1041,6 +1188,12 @@
 		</statBoosts>
 		<icon>icon_co_ravager_plating</icon>
 	</mod-append:aug>
+	
+	<mod-append:aug name="CO_RAVAGER_PLATING_FORGOTTEN">
+		<icon>icon_co_ravager_auto</icon>
+		<locked/>
+	</mod-append:aug>
+	
 	<mod-append:aug name="CO_RAVAGER_PROTOCOL">
     	<statBoosts>
 			<statBoost name="isAnaerobic">
@@ -1103,6 +1256,7 @@
 		</statBoosts>
 		<icon>icon_co_ravager_protocol</icon>
 	</mod-append:aug>
+	
 	<mod-append:aug name="CO_RAVAGER_ENERSHIELD">
     	<function name="ENERGY_SHIELD" value="0" useForReqs="true" stackable="false"/>
 		<superShield>
@@ -1122,6 +1276,7 @@
 		<locked/>
 		<icon>icon_co_ravager_shield</icon>
 	</mod-append:aug>
+	
 	<mod-append:aug name="CO_RAVAGER_FADING_CLOAK">
 		<function name="FAST_CLOAK" value="3" useForReqs="false" warning="false"/>
 		<icon>icon_co_ravager_auto</icon>
@@ -1181,134 +1336,6 @@
 		<locked/>
 	</mod-append:aug>
 	
-
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!-- 						SIGILS							SIGILS							SIGILS							SIGILS							-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
-
-	<mod-append:aug name="CO_SIGIL_SCRAP_LR">
-		<function name="SCRAP_COLLECTOR" value="-0.15" useForReqs="false"/>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_SCRAP_MR">
-		<function name="SCRAP_COLLECTOR" value="-0.25" useForReqs="false"/>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_SCRAP_HR">
-		<function name="SCRAP_COLLECTOR" value="-0.4" useForReqs="false"/>
-	</mod-append:aug>
-	
-	
-	<mod-append:aug name="CO_SIGIL_SHIELD_LR">
-		<function name="SHIELD_RECHARGE" value="-0.15" useForReqs="false"/>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_SHIELD_MR">
-		<function name="SHIELD_RECHARGE" value="-0.25" useForReqs="false"/>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_SHIELD_HR">
-		<function name="SHIELD_RECHARGE" value="-0.4" useForReqs="false"/>
-	</mod-append:aug>
-	
-	
-	<mod-append:aug name="CO_SIGIL_WEAPON_LR">
-		<function name="AUTO_COOLDOWN" value="-0.15" useForReqs="false"/>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_WEAPON_MR">
-		<function name="AUTO_COOLDOWN" value="-0.25" useForReqs="false"/>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_WEAPON_HR">
-		<function name="AUTO_COOLDOWN" value="-0.4" useForReqs="false"/>
-	</mod-append:aug>
-	
-
-	<mod-append:aug name="CO_SIGIL_SENSOR_LR">
-		<function name="ADV_SCANNERS" value="0" useForReqs="false"/>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_SENSOR_MR">
-		<function name="ADV_SCANNERS" value="0" useForReqs="false"/>
-    	<statBoosts>
-			<statBoost name="isTelepathic">
-				<boostType>SET</boostType>
-				<value>false</value>
-				<shipTarget>ALL</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<priority>0</priority>
-			</statBoost>
-			<statBoost name="isTelepathic">
-				<boostType>SET</boostType>
-				<value>false</value>
-				<shipTarget>ALL</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>DRONES</droneTarget>
-				<priority>0</priority>
-			</statBoost>
-		</statBoosts>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_SENSOR_HR">
-		<function name="ADV_SCANNERS" value="0" useForReqs="false"/>
-	</mod-append:aug>
-	
-	
-	<mod-append:aug name="CO_SIGIL_HEALING_LR">
-		<function name="NANO_MEDBAY" value="0" useForReqs="true" warning="false"/>
-		<statBoosts>
-			<statBoost name="healAmount">
-				<boostType>FLAT</boostType>
-				<shipTarget>ORIGINAL_SHIP</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>-1.6</amount>
-				<priority>0</priority>
-				<systemPowerDependency>
-					<medbay/>
-				</systemPowerDependency>
-				<systemPowerScaling>
-					<noSys>0</noSys>
-					<noPwr>0</noPwr>
-					<onePwr>1</onePwr>
-					<twoPwr>1.5</twoPwr>
-					<threePwr>3</threePwr>
-					<fourPwr>6</fourPwr>
-				</systemPowerScaling>
-				<systemRoomTarget>NONE</systemRoomTarget>
-				<systemList>
-					<medbay/>
-				</systemList>
-			</statBoost>
-			<statBoost name="cloneSpeedMultiplier">
-				<boostType>SET</boostType>
-				<shipTarget>ALL</shipTarget>
-				<crewTarget>ALLIES</crewTarget>
-				<droneTarget>CREW</droneTarget>
-				<amount>1</amount>
-				<priority>0</priority>
-				<systemPowerDependency>
-					<clonebay/>
-				</systemPowerDependency>
-				<systemPowerScaling>
-					<noSys>0</noSys>
-					<noPwr>0</noPwr>
-					<onePwr>0.867</onePwr>
-					<twoPwr>0.667</twoPwr>
-					<threePwr>0.534</threePwr>
-					<fourPwr>0.1</fourPwr>
-				</systemPowerScaling>
-				<systemRoomTarget>NONE</systemRoomTarget>
-				<systemList>
-					<clonebay/>
-				</systemList>
-			</statBoost>
-		</statBoosts>
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_HEALING_MR">
-	</mod-append:aug>
-	<mod-append:aug name="CO_SIGIL_HEALING_HR">
-	</mod-append:aug>
-
-
 </mod:findLike>
 
 
@@ -1421,33 +1448,31 @@ This enemy's Stage II Ravagers are able to mark a priority target for death, kil
 
 <mod:findLike type="ships">
 
-	<mod-append:customShip name="CO_LEGION_GUARD">
+	<!--<mod-append:customShip name="CO_LEGION_GUARD">
 		<shipIcons>
 			<shipIcon>icon_threat</shipIcon>
 		</shipIcons>
 		<noFuelStalemate/>
 		<noJump/>
-	</mod-append:customShip>
+	</mod-append:customShip>-->
 	
 	<mod-append:customShip name="CO_RAVAGER_FRIGATE">
 	</mod-append:customShip>
-	<mod-append:customShip name="CO_RAVAGER_FRIGATE_NOMISS">
-	</mod-append:customShip>
 	<mod-append:customShip name="CO_RAVAGER_FRIGATE_ASSAULT">
 	</mod-append:customShip>
-	<mod-append:customShip name="CO_RAVAGER_FRIGATE_ASSAULT_NOMISS">
-	</mod-append:customShip>
 	<mod-append:customShip name="CO_RAVAGER_DESTROYER">
-	</mod-append:customShip>
-	<mod-append:customShip name="CO_RAVAGER_DESTROYER_NOMISS">
 	</mod-append:customShip>
 	<!--<mod-append:customShip name="CO_RAVAGER_DESTROYER_COMMAND"> elite destroyer
 	</mod-append:customShip>-->
 	<mod-append:customShip name="CO_RAVAGER_DESTROYER_TACTICAL">
 	</mod-append:customShip>
-	<mod-append:customShip name="CO_RAVAGER_DESTROYER_TACTICAL_NOMISS">
-	</mod-append:customShip>
 	
+	
+	<mod-append:customShip name="CO_RAVAGER_CRUISER_POLYMORTH">
+		<crew>
+            <co_human_ravager_cache room="1" name="Cache"/>
+        </crew>
+	</mod-append:customShip>
 	
 
 	<mod-append:customShip name="CO_RAVAGER_MERCHANT"> <!-- strayvan-->
@@ -1488,16 +1513,6 @@ This enemy's Stage II Ravagers are able to mark a priority target for death, kil
 	<mod-append:customShip name="CO_SLAYERS_HAULER"> <!-- hauler, pbly smol variant | regular-->
 	</mod-append:customShip>
 	
-	
-	
-	
-	
-	<mod-append:customShip name="CO_ANGEL_BATTLESHIP_PURE">
-		<shipIcons>
-			<shipIcon>icon_threat</shipIcon>
-		</shipIcons>
-	</mod-append:customShip>
-	
 </mod:findLike>
 
 
@@ -1508,15 +1523,12 @@ This enemy's Stage II Ravagers are able to mark a priority target for death, kil
 	<bossShip yOffset="0">CO_RAVAGER_MERCHANT</bossShip>
 	
 	<bossShip yOffset="80">CO_SLAYERS_LOGISTICS_CRUISER</bossShip>
-	
-	<bossShip yOffset="100">CO_ANGEL_BATTLESHIP_PURE</bossShip>
 
 
 
 	<!-- 				stoopid ass files						-->
-	<eventFile>co_special_angel</eventFile>
-	<eventFile>co_special_slayers</eventFile>
 	<eventFile>co_special_ravagers</eventFile>
+	<eventFile>co_special_slayers</eventFile>
 	
 	<!-- 					sector files						-->
 	<eventFile>co_sector_legion</eventFile>
@@ -1559,48 +1571,7 @@ This enemy's Stage II Ravagers are able to mark a priority target for death, kil
 		</req>
 	</req>
 
-	<!--					SIGIL/CURSE REQS					-->
-
-	<req name="CO_CHECK_NO_SIGIL_HEALING_MR_AND_NO_LAB_INSTALLED" type="any">
-		<name>CO_SIGIL_HEALING_MR</name>
-		<name>LAB_INSTALLED</name>
-	</req>
-	<req name="CO_CHECK_NO_SIGIL_HEALING_MR_AND_LAB_INSTALLED" type="all">
-		<req lvl="0" max_lvl="0" >
-			<name>CO_SIGIL_HEALING_MR</name>
-		</req>
-		<req lvl="1" >
-			<name>LAB_INSTALLED</name>
-		</req>
-	</req>
-	
-	<req name="CO_CHECK_NO_SIGIL_HEALING_HR_AND_MEDBAY" type="all">
-		<req lvl="0" max_lvl="0" >
-			<name>CO_SIGIL_HEALING_HR</name>
-		</req>
-		<req lvl="1" >
-			<name>medbay</name>
-		</req>
-	</req>
-	<req name="CO_CHECK_SIGIL_HEALING_HR_AND_MEDBAY" type="all">
-		<name>CO_SIGIL_HEALING_HR</name>
-		<name>medbay</name>
-	</req>
-	<req name="CO_CHECK_NO_SIGIL_HEALING_HR_AND_CLONEBAY" type="all">
-		<req lvl="0" max_lvl="0" >
-			<name>CO_SIGIL_HEALING_HR</name>
-		</req>
-		<req lvl="1" >
-			<name>clonebay</name>
-		</req>
-	</req>
-	<req name="CO_CHECK_SIGIL_HEALING_HR_AND_CLONEBAY" type="all">
-		<name>CO_SIGIL_HEALING_HR</name>
-		<name>clonebay</name>
-	</req>
-
 </events>
-
 
 <!-- 
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[

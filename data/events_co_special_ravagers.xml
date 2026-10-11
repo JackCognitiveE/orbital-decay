@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<event name="CO_RAVAGERS_MEET">
+	<status type="limit" target="player" system="sensors" amount="1"/>
+	<img back="CO_BG_RAVAGER_SPECIAL_MEETS" planet="NONE"/>
+	<preventQuest/>
+	<loadEventList seeded="false" first="true" default="CO_RAVAGER_MERCHANT_LOAD">
+		<event name="CO_RAVAGERS_MEET_1" req="co_prof_ravagers_meet" lvl="0" max_lvl="0"/>
+		<event name="CO_RAVAGERS_MEET_2" req="co_prof_ravagers_meet" lvl="1" max_lvl="1"/>
+		<event name="CO_RAVAGERS_MEET_3" req="co_prof_ravagers_meet" lvl="2" max_lvl="2"/>
+		<event name="CO_RAVAGER_MERCHANT_LOAD" req="co_prof_ravagers_meet" lvl="3"/>
+	</loadEventList> 
+</event>
+
+
+<ship name="CO_RAVAGER_MEET_FRIGATE" auto_blueprint="CO_RAVAGER_FRIGATE">
+	<destroyed load="CO_RAVAGER_MEET_1_WIN"/>
+</ship>
+<event name="CO_RAVAGERS_MEET_1">
+	<!--<distressBeacon/>-->
+	<text>Upon arriving at the beacon, you cannot tell what was the source of the distress signal. Apart from the obvious oddity of malfunctioning sensors, you notice that something is wrong in the vicinity of this beacon. It is located not that far from fairly bright stars, like countless others, but it is precisely in its zone that you feel an acute lack of light, as if the darkness is trying to crush you.</text>
+	<choice>
+		<text>Try to manually find the signal source.</text>
+		<event load="CO_RAVAGERS_MEET_1_SEARCH"/>
+	</choice>
+	<choice>
+		<text>Try to fix the sensors.</text>
+		<event>
+			<text>All your attempts to fix the malfunction come to nothing. The only thing they result in is the realization that carrying on in the same vein will probably only make matters worse, especially since you've found no obvious signs of system damage. Perhaps the system is being sabotaged remotely.</text>
+			<choice>
+				<text>Try to manually find the signal source.</text>
+				<event load="CO_RAVAGERS_MEET_1_SEARCH"/>
+			</choice>
+			<choice>
+				<text>Ignore it and continue your mission.</text>
+				<event load="STORAGE_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text>Let thing slide and continue your mission.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+</event>
+<event name="CO_RAVAGERS_MEET_1_SEARCH">
+	<text>You decide to continue with the purpose for which you came to this beacon. However, with near-zero visibility, which even the nebulae could not provide, your movements seem to you like the futile gropings of a blind kitten.</text>
+	<choice>
+		<text>Continue...</text>
+		<event>
+			<ship load="CO_RAVAGER_MEET_FRIGATE" hostile="false"/>
+			<text>The fragility of existence would have been felt for a long time - which you don't have much of anyway - if your sensors had continued showing no signs of life. They are detecting a ship, something neither you nor your "colleagues" have ever come across anywhere. Maybe it's time to add two and two and realize that too many strange things have occurred of late, and that none of this is anything but a trap.
+The most serious oddity, you decide to note, is the fact that the ship has bright red lights over almost its entire hull surface - lights that you somehow managed not to notice even when practically right next to it. After successfully saving the Federation from total annihilation, it wouldn't hurt you to save your "optical sensors" as well.</text>
+			<choice>
+				<text>Hail the vessel.</text>
+				<event>
+					<text>Your attempts to establish contact are met with steady silence. And, apparently, the charging of weapons?</text>
+					<ship hostile="true"/>
+					<choice hidden="true">
+						<text>Prepare to fight.</text>
+						<event load="COMBAT_CHECK"/>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Attack the vessel.</text>
+				<event>
+					<text>Without giving it a second thought, you decide to get rid of yet another potential obstacle in your way.
+Be ready to get as good as you give.</text>
+					<ship hostile="true"/>
+					<choice hidden="true">
+						<text>Continue...</text>
+						<event load="COMBAT_CHECK"/>
+					</choice>
+				</event>
+			</choice>
+			<choice>
+				<text>Charge your engines and leave before it's too late.</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="CO_RAVAGER_MEET_1_WIN">
+	<status type="clear" target="player" system="sensors" amount="100"/>
+	<text>As the vessel comes apart, you note that its red lights not only don't fade, but rather appear to glow only more intensely than before. Regardless, in its current state, what was an unidentified ship not so long ago should no longer be capable of causing harm to anyone - assuming it ever intended to, that is.</text>
+	<choice>
+		<text>Scrap the hull.</text>
+		<event>
+			<text>Neither the interior of the hull nor the ship as a whole resembles anything you've ever seen before. Everywhere you look, there are countless wires coiled together like clumps of snakes, and they don't seem to perform any function beyond possibly a structural one. Here and there, beneath heaps of these wires, you can make out the same red lights that were visible from outside the hull. On closer examination of the sources of these lights, you recognize something reminiscent of eyes, encased in bulky metal shells - probably their eye sockets.</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event>
+					<text>Text</text>
+					<weapon name="CO_RAVAGER_CONTAINER_EPIC"/>
+					<autoReward level="MED">standard</autoReward>
+				</event>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<!--	
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////	
+-->
+
+<event name="LOAD_CO_RAVAGER_MERCHANT_STORE">
+	<store>CO_RAVAGER_MERCHANT_STORE</store>
+	<text>Before you shop, you still have some time to do something else aboard the ship.</text>
+	<choice>
+		<text>Do something onboard the ship.</text>
+		<event load="STORAGE_CHECK"/>
+	</choice>
+	<choice>
+		<text>Do nothing.</text>
+		<event/>
+	</choice>
+</event>
+
+
+<event name="CO_RAVAGER_MERCHANT_LOAD">
+	<text>There's a straying merchant ship.</text>
+	<ship load="CO_RAVAGER_MERCHANT" hostile="false"/>
+	<choice>
+		<text>Hello.</text>
+		<event>
+			<text>...</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="LOAD_CO_RAVAGER_MERCHANT_STORE"/>
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text>Beat the crap out of it.</text>
+		<event>
+			<text>Let it go.</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+
+<event name="CO_RAVAGER_ALLTEST">
+	<loadEventList seeded="false"> <!--first="true"-->
+		<!--<event name="FR_TARTARUS_BOUNTIES_CHAOS" req="FR_REQUIREMENT_COMPLETED_TARTARUS_AND_IS_CHAOS" lvl="1"/>
+		<event name="FR_TARTARUS_BOUNTIES" req="FR_REQUIREMENT_COMPLETED_TARTARUS_AND_IS_CHAOS" lvl="0" max_lvl="0"/>-->
+		<event load="CO_STRAYING_RAVAGER"/>
+	</loadEventList>
+</event>
+
+
+<event name="CO_STRAYING_RAVAGER">
+	<text>There's a straying ravager ship.</text>
+	<ship load="CO_RAVAGER_ALL" hostile="false"/>
+	<choice>
+		<text>Hello.</text>
+		<event>
+			<text>...</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text>Beat the crap out of it.</text>
+		<event>
+			<text>Let it go.</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+<event name="CO_POLYMORTH">
+	<text>There's a straying ravager ship.</text>
+	<ship load="CO_RAVAGER_CRUISER_POLYMORTH" hostile="false"/>
+	<choice>
+		<text>Hello.</text>
+		<event>
+			<text>...</text>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event/>
+			</choice>
+		</event>
+	</choice>
+	<choice>
+		<text>Beat the crap out of it.</text>
+		<event>
+			<text>Let it go.</text>
+			<ship hostile="true"/>
+			<choice hidden="true">
+				<text>Continue...</text>
+				<event load="COMBAT_CHECK"/>
+			</choice>
+		</event>
+	</choice>
+</event>
+
+
+<ship name="CO_RAVAGER_CORVETTE" auto_blueprint="CO_RAVAGER_CORVETTE">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+<ship name="CO_RAVAGER_CORVETTE_LOGISTICS" auto_blueprint="CO_RAVAGER_CORVETTE_LOGISTICS">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+<ship name="CO_RAVAGER_FRIGATE" auto_blueprint="CO_RAVAGER_FRIGATE">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+<ship name="CO_RAVAGER_FRIGATE_ASSAULT" auto_blueprint="CO_RAVAGER_FRIGATE_ASSAULT">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+<ship name="CO_RAVAGER_DESTROYER" auto_blueprint="CO_RAVAGER_DESTROYER">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+<!--<ship name="CO_RAVAGER_DESTROYER_COMMAND" auto_blueprint="CO_RAVAGER_DESTROYER_COMMAND">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>-->
+<ship name="CO_RAVAGER_DESTROYER_TACTICAL" auto_blueprint="CO_RAVAGER_DESTROYER_TACTICAL">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+
+<ship name="CO_RAVAGER_MERCHANT" auto_blueprint="CO_RAVAGER_MERCHANT">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+
+<ship name="CO_RAVAGER_CRUISER_POLYMORTH" auto_blueprint="CO_RAVAGER_CRUISER_POLYMORTH">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+
+
+<ship name="CO_RAVAGER_ALL" auto_blueprint="CO_LIST_SHIPS_RAVAGER_ALL">
+	<destroyed load="CO_RAVAGER_GENERIC_DEFEAT"/>
+</ship>
+
+
+
+<event name="CO_RAVAGER_GENERIC_DEFEAT">
+	<text>Splendid.</text>
+	<autoReward level="MED">standard</autoReward>
+</event>
+

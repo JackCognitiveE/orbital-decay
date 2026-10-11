@@ -5,9 +5,10 @@ local vter = mods.multiverse.vter
 local is_first_shot = mods.multiverse.is_first_shot
 
 
+--[[
 local function get_room_at_location(shipManager, location, includeWalls)
     return Hyperspace.ShipGraph.GetShipInfo(shipManager.iShipId):GetSelectedRoom(location.x, location.y, includeWalls)
-end
+end]]
 
 
 local function get_random_point_in_radius(center, radius)
@@ -17,196 +18,157 @@ local function get_random_point_in_radius(center, radius)
 end
 
 
-mods.co.charonPerkCharge = {}
-local charonPerkCharge = mods.co.charonPerkCharge
-charonPerkCharge["CO_RAIL_CHARON"] = {maxShots = 2, pState = true}
-charonPerkCharge["CO_RAIL_CHARON_CHAOS"] = {maxShots = 2, pState = true}
+mods.co.hitChargedPerks = {}
+local hitChargedPerks = mods.co.hitChargedPerks
+hitChargedPerks["CO_RAIL_ADAPTER"] = {
+    initialize = {pState = 0, countPerkShot = true},
+    maxHits = 2,
+    pUse = 1,
+    pAdd = 1,
+    countFirst = true,
+    countFirstPerkless = true
+}
+hitChargedPerks["CO_RAIL_CHARON"] = {
+    initialize = {pState = 0, countPerkShot = false},
+    maxHits = 2,
+    pUse = 1,
+    pAdd = 1,
+    countFirst = false,
+    countFirstPerkless = true,
+    blueprint = Hyperspace.Blueprints:GetWeaponBlueprint("CO_RAIL_CHARON_PERK")
+}
+hitChargedPerks["CO_RAIL_THYRSUS"] = {
+    initialize = {pState = 3, countPerkShot = false},
+    maxHits = 4,
+    pUse = 1,
+    pAdd = 0.5,
+    countFirst = true,
+    countFirstPerkless = true
+}
+hitChargedPerks["CO_RAIL_KAIJU"] = {
+    initialize = {pState = 0, countPerkShot = false},
+    maxHits = 12,
+    pUse = 1,
+    pAdd = 1,
+    countFirst = true,
+    countFirstPerkless = true
+}
 
-script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-    local coPerkCharge = nil
-    pcall(function() coPerkCharge = charonPerkCharge[weapon.blueprint.name] end)
-    if coPerkCharge then
-        local perkDataTable = userdata_table(weapon, "mods.coCharon.shots")
-        if perkDataTable.pChargeProgress then
-            local ship = Hyperspace.Global.GetInstance():GetShipManager(projectile.ownerId)
-            perkDataTable.pChargeProgress = math.max(perkDataTable.pChargeProgress - 1, 0)
-            if perkDataTable.pChargeProgress == 0 then
-                perkDataTable.pChargeProgress = nil
-                local charon = Hyperspace.Blueprints:GetWeaponBlueprint("CO_RAIL_CHARON_PERK")
-                local coCharonPerk = {}
-                coCharonPerk.CO_RAIL_CHARON = charon
-                coCharonPerk.CO_RAIL_CHARON_CHAOS = charon
-                local charonProjReplacement = coCharonPerk[weapon.blueprint.name]
-                if charonProjReplacement then
-                    projectile:Kill()
-                    local spaceManager = Hyperspace.Global.GetInstance():GetCApp().world.space
-                        local charonProj = spaceManager:CreateLaserBlast(
-                        charonProjReplacement, projectile.position, projectile.currentSpace, projectile.ownerId,
-                        projectile.target, projectile.destinationSpace, projectile.heading)
-                        charonProj.entryAngle = projectile.entryAngle
-                    local shipManager = Hyperspace.Global.GetInstance():GetShipManager(projectile.ownerId)
-                end
-            elseif weapon.powered == false then
-                perkDataTable.pChargeProgress = nil
-            end
-        elseif projectile.missed then
-            perkDataTable.pChargeProgress = coPerkCharge.maxShots
-            print("projectile missed")
-        else
-            userdata_table(weapon, "mods.coCharon.shots").pChargeProgress = coPerkCharge.maxShots
+local function reset_hitChargedPerks(weapon)
+    local perk = hitChargedPerks[weapon.blueprint.name]
+    if perk then
+        userdata_table(weapon, "mods.co.hitChargeData").stateData = {}
+        for varName, value in pairs(perk.initialize) do
+            userdata_table(weapon, "mods.co.hitChargeData").stateData[varName] = value
         end
     end
-end)
+end
 
 script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
-    local charonWeaponData = nil
     for weapon in vter(shipManager:GetWeaponList()) do
-        pcall(function() charonWeaponData = charonPerkCharge[weapon.blueprint.name] end)
-        if charonWeaponData then
-            local perkDataTable = userdata_table(weapon, "mods.coCharon.shots")
-            if perkDataTable.pChargeProgress then
-                perkDataTable.pChargeProgress = nil
+        reset_hitChargedPerks(weapon)
+    end
+end)
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+    local weapBL = weapon.blueprint.name
+    local perk = hitChargedPerks[weapBL]
+    if perk then
+        local perkData = userdata_table(weapon, "mods.co.hitChargeData") and userdata_table(weapon, "mods.co.hitChargeData").stateData
+        if perkData.countFirst then -- and perkData.pState < perk.pUse
+            if is_first_shot(weapon, true) then
+                userdata_table(weapon, "mods.co.volley").count = (userdata_table(weapon, "mods.co.volley").count or 0) + 1
             end
         end
-    end
-end)
-script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-    local charonWeaponData = nil
-    for weapon in vter(shipManager:GetWeaponList()) do
-        pcall(function() charonWeaponData = charonPerkCharge[weapon.blueprint.name] end)
-        if charonWeaponData then
-            local perkDataTable = userdata_table(weapon, "mods.coCharon.shots")
-            if perkDataTable.pChargeProgress then
-                if weapon.powered == false then
-                    perkDataTable.pChargeProgress = nil
-                end
-            end
-        end
-    end
-end)
-
-
-script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-    if weapon.blueprint.name == "CO_RAIL_ADAPTER" then
-        if is_first_shot(weapon, true) then
-            userdata_table(weapon, "mods.co.volley").count = (userdata_table(weapon, "mods.co.volley").count or 0) + 1
-        end
-        userdata_table(projectile, "mods.co.volley").identifier = tostring(weapon) .. tostring(userdata_table(weapon, "mods.co.volley").count)
-    end
-end)
-script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(ship, projectile, location)
-    if projectile.extend.name == "CO_RAIL_ADAPTER" then
-        local ship_volley_table = userdata_table(ship, "mods.co.volley")
-        local identifier = userdata_table(projectile, "mods.co.volley").identifier
-        ship_volley_table[identifier] = (ship_volley_table[identifier] or 0) + 1
-        --print("hits in volley", ship_volley_table[identifier])
-        if ship_volley_table[identifier] == 3 then
-            local roomId = get_room_at_location(ship, location, true)
-            --print("you hit", roomId)
-            ship:DamageHull(1, true)
-            ship:GetSystemInRoom(roomId):AddDamage(1)
-            ship_volley_table[identifier] = 0
-        end
-    end
-end)
-
-
---[[local thyrsusPerkState = mods.co.thyrsusPerkState
-thyrsusPerkState["CO_RAIL_CHARON"] = {maxShots = 2, pState = true}]]
-
-local thyrsusPerkState = 2
-
-script.on_internal_event(Defines.InternalEvents.JUMP_ARRIVE, function(shipManager)
-    thyrsusPerkState = 2
-end)
-
-script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-    if weapon.blueprint.name == "CO_RAIL_THYRSUS" then
         local shotNumber = weapon.blueprint.shots - weapon.queuedProjectiles:size()
-        if is_first_shot(weapon, true) and thyrsusPerkState < 1 then
-            userdata_table(weapon, "mods.co.volley").count = (userdata_table(weapon, "mods.co.volley").count or 0) + 1
-        end
         userdata_table(projectile, "mods.co.volley").identifier = tostring(weapon) .. tostring(userdata_table(weapon, "mods.co.volley").count)
-        if thyrsusPerkState > 0 then
-            local stimShots = weapon.queuedProjectiles:size()
-            weapon.queuedProjectiles:clear()
-            for shots = 1, stimShots do
+        userdata_table(projectile, "mods.co.volley").shotNumber = shotNumber
+        if perkData.pState >= perk.pUse then
+            if weapon.blueprint.name == "CO_RAIL_CHARON" then
+                projectile:Kill()
                 local spaceManager = Hyperspace.App.world.space
-                local thyrsusShot = spaceManager:CreateLaserBlast(
-                weapon.blueprint,
-                projectile.position,
-                projectile.currentSpace,
-                projectile.ownerId,
-                projectile.target,
-                projectile.destinationSpace,
-                projectile.heading
-                )
-                projectile.damage.iSystemDamage = 0
-                projectile.damage.iPersDamage = 0
+                local charonProj = spaceManager:CreateLaserBlast(
+                perk.blueprint, projectile.position, projectile.currentSpace, projectile.ownerId,
+                projectile.target, projectile.destinationSpace, projectile.heading)
+                charonProj.entryAngle = projectile.entryAngle
+                perkData.pState = perkData.pState - perk.pUse
+                --perkData.countPerkShot = false
+                print(tostring(weapBL).." current perk state"..tostring(perkData.pState))
+            elseif weapon.blueprint.name == "CO_RAIL_THYRSUS" then
+                weapon.weaponVisual:SetFireTime(0.00001)
                 projectile.damage.iShieldPiercing = projectile.damage.iShieldPiercing + 1
-            end
-            --[[weapon.weaponVisual:SetFireTime(0.00001)]]
-            --if shotNumber == 4 then
-                thyrsusPerkState = thyrsusPerkState - 1
-                --weapon.weaponVisual:SetFireTime(0.125)
-                if thyrsusPerkState == 0 then
-                    thyrsusPerkState = thyrsusPerkState - 1
-                    print('perk state:', thyrsusPerkState)
+                projectile.damage.iSystemDamage = projectile.damage.iSystemDamage + 1
+                projectile.damage.iPersDamage = projectile.damage.iPersDamage + 1
+                if shotNumber == perk.maxHits then
+                    perkData.pState = perkData.pState - perk.pUse
+                    --perkData.countPerkShot = false
+                    weapon.weaponVisual:SetFireTime(0.125)
+                    print(tostring(weapBL).." current perk state"..tostring(perkData.pState))
                 end
-            --end
-        elseif shotNumber % 4 == 0 then
-            projectile.damage.iSystemDamage = 0
+            end
         end
+        if weapon.powered == false then
+            reset_hitChargedPerks(weapon)
+            print(tostring(weapBL).."perk charge reset")
+        end
+        projectile.table.weapBL = weapon
     end
 end)
-script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(ship, projectile, location, damage, shipFriendlyFire)
-    if projectile.extend.name == "CO_RAIL_THYRSUS" and thyrsusPerkState < 1 then
-        local ship_volley_table = userdata_table(ship, "mods.co.volley")
+
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    local weapBL = projectile.extend.name
+    local perk = hitChargedPerks[weapBL]
+    if perk then
+        local weapon = projectile.table.weapBL
+        local perkData = userdata_table(weapon, "mods.co.hitChargeData") and userdata_table(weapon, "mods.co.hitChargeData").stateData
+        local ship_volley_table = userdata_table(shipManager, "mods.co.volley")
         local identifier = userdata_table(projectile, "mods.co.volley").identifier
+        --local shotNumber = userdata_table(projectile, "mods.co.volley").shotNumber
         ship_volley_table[identifier] = (ship_volley_table[identifier] or 0) + 1
         print("hits in volley", ship_volley_table[identifier])
-        if ship_volley_table[identifier] == 4 then
-            thyrsusPerkState = thyrsusPerkState + 1
-            print('perk state:', thyrsusPerkState)
-        end
-        if thyrsusPerkState > 0 then
-            print('perk charged')
-        end
-    end
-end)
-
-
-local kaijuPerkState = nil
-
-script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-    if weapon.blueprint.name == "CO_RAIL_KAIJU" then
-        local shotNumber = weapon.blueprint.shots - weapon.queuedProjectiles:size()
-        if is_first_shot(weapon, true) and kaijuPerkState == nil then
-            userdata_table(weapon, "mods.co.volley").count = (userdata_table(weapon, "mods.co.volley").count or 0) + 1
-        end
-        userdata_table(projectile, "mods.co.volley").identifier = tostring(weapon) .. tostring(userdata_table(weapon, "mods.co.volley").count)
-        if kaijuPerkState == true then
-            if shotNumber % 3 == 0 then
-                projectile.damage.iDamage = 2
-                if shotNumber == 12 then
-                    kaijuPerkState = nil
+        if ship_volley_table[identifier] == perk.maxHits and perkData.pState < perk.pUse then -- and ship_volley_table[identifier] == shotNumber
+            if perk.initialize.countPerkShot then
+                perkData.pState = perkData.pState + perk.pAdd
+                print(tostring(weapBL).." perk charged to "..tostring(perkData.pState))
+            else
+                if perk.countFirstPerkless then
+                    if perkData.countPerkShot then
+                        perkData.pState = perkData.pState + perk.pAdd
+                        print(tostring(weapBL).." perk charged to "..tostring(perkData.pState))
+                    else
+                        perkData.countPerkShot = true
+                    end
                 end
             end
-        elseif shotNumber % 6 == 0 then
-            projectile.damage.iSystemDamage = 0
+            ship_volley_table[identifier] = 0
+            --[[]]
         end
     end
 end)
-script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA_HIT, function(ship, projectile, location, damage, shipFriendlyFire)
-    if projectile.extend.name == "CO_RAIL_KAIJU" and kaijuPerkState == nil then
-        local ship_volley_table = userdata_table(ship, "mods.co.volley")
+
+script.on_internal_event(Defines.InternalEvents.DAMAGE_AREA, function(shipManager, projectile, location, damage, shipFriendlyFire)
+    local weapBL = projectile.extend.name
+    local perk = hitChargedPerks[weapBL]
+    if perk then
+        local weapon = projectile.table.weapBL
+        local perkData = userdata_table(weapon, "mods.co.hitChargeData") and userdata_table(weapon, "mods.co.hitChargeData").stateData
+        local ship_volley_table = userdata_table(shipManager, "mods.co.volley")
         local identifier = userdata_table(projectile, "mods.co.volley").identifier
-        --print("identifier on hit", identifier)
-        ship_volley_table[identifier] = (ship_volley_table[identifier] or 0) + 1
-        --print("hits in volley", ship_volley_table[identifier])
-        if ship_volley_table[identifier] == 12 then
-            kaijuPerkState = true
-            --print('perk is active')
+        local shotNumber = userdata_table(projectile, "mods.co.volley").shotNumber
+        if ship_volley_table[identifier] % 3 == 2 and ship_volley_table[identifier] == shotNumber - 1 and perkData.pState >= perk.pUse then -- 
+            if projectile and weapBL == "CO_RAIL_ADAPTER" then
+                damage.iDamage = damage.iDamage + 1
+                perkData.pState = perkData.pState - perk.pUse
+                ship_volley_table[identifier] = 0
+                print(tostring(weapBL).." current perk state"..tostring(perkData.pState))
+            elseif projectile and weapBL == "CO_RAIL_KAIJU" then
+                damage.iDamage = damage.iDamage + 1
+                if shotNumber == perk.maxHits then
+                    perkData.pState = perkData.pState - perk.pUse
+                    ship_volley_table[identifier] = 0
+                    print(tostring(weapBL).." current perk state"..tostring(perkData.pState))
+                end
+            end
         end
     end
 end)
@@ -353,8 +315,7 @@ script.on_internal_event(Defines.InternalEvents.WEAPON_RENDERBOX, function(weapo
         local boostLevel = math.min(weapon.chargeLevel, weapon.weaponVisual.iChargeLevels - 1)
         first = first / chargerBoost ^ boostLevel
         second = second / chargerBoost ^ boostLevel
-        chargeString = string.format("%.1f / %.1f", first, second)
+        chargeString = string.format("%.1f/%.1f", first, second)
     end
     return Defines.Chain.CONTINUE, chargeString, damageString, shotLimitString
 end)
-

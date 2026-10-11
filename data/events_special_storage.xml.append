@@ -106,7 +106,7 @@ This kind of scene would get under anyone's skin, so you consider moving the con
 	<choice>
 		<text>Move the container to the reactor room.</text>
 		<event>
-			<text>Once you relocated the container – without any resistance, only intermittently observing with all its eyes in every direction – closer to the ship's reactor and left it there, abnormal sounds typical for such a situation began to emerge.
+			<text>Once you relocated the container - without any resistance, only intermittently observing with all its eyes in every direction - closer to the ship's reactor and left it there, abnormal sounds typical for such a situation began to emerge.
 Among them, you catch the scraping of metal, hints of decompression, and something else resembling... weapon charging? That thing is trying to blow up our goddamn reactor!</text>
 			<choice>
 				<text>Bring the container back right now before it's too late!</text>
@@ -118,7 +118,7 @@ Upon closer inspection, you finally find the missing, Venom-like mass, which is 
 						<text>Head back to the reactor and check the container.</text>
 						<event>
 							<text>When you return, you realize that, surprisingly, you haven't exploded yet. Perhaps the explosion was never actually meant to happen, but the situation was close to, if not outright, an emergency.
-Celebrating the fact that you will live a little longer, you finally open the container. Inside, you find what was likely the source of the sounds describing an "inevitable and extremely dull end" – an unusual weapon, moving on its own and intensely examining its new surroundings, including you.
+Celebrating the fact that you will live a little longer, you finally open the container. Inside, you find what was likely the source of the sounds describing an "inevitable and extremely dull end" - an unusual weapon, moving on its own and intensely examining its new surroundings, including you.
 It's unclear whether it will be safe to install this on your ship, though it could probably be sold for a considerable amount of money.</text>
 							<remove name="CO_RAVAGER_CONTAINER_EPIC"/>
 							<weapon name="CO_RAVAGER_CONTAINER_EPIC_POOL"/>
@@ -179,7 +179,7 @@ This kind of scene would get under anyone's skin, so you consider moving the con
 	<choice>
 		<text>Move the container to the reactor room.</text>
 		<event>
-			<text>Once you relocated the container – without any resistance, only intermittently observing with all its eyes in every direction – closer to the ship's reactor and left it there, abnormal sounds typical for such a situation began to emerge.
+			<text>Once you relocated the container - without any resistance, only intermittently observing with all its eyes in every direction - closer to the ship's reactor and left it there, abnormal sounds typical for such a situation began to emerge.
 Among them, you catch the scraping of metal, hints of decompression, and something else resembling... weapon charging? That thing is trying to blow up our goddamn reactor!</text>
 			<choice>
 				<text>Bring the container back right now before it's too late!</text>
@@ -191,7 +191,7 @@ Upon closer inspection, you finally find the missing, Venom-like mass, which is 
 						<text>Head back to the reactor and check the container.</text>
 						<event>
 							<text>When you return, you realize that, surprisingly, you haven't exploded yet. Perhaps the explosion was never actually meant to happen, but the situation was close to, if not outright, an emergency.
-Celebrating the fact that you will live a little longer, you finally open the container. Inside, you find what was likely the source of the sounds describing an "inevitable and extremely dull end" – an unusual weapon, moving on its own and intensely examining its new surroundings, including you.
+Celebrating the fact that you will live a little longer, you finally open the container. Inside, you find what was likely the source of the sounds describing an "inevitable and extremely dull end" - an unusual weapon, moving on its own and intensely examining its new surroundings, including you.
 It's unclear whether it will be safe to install this on your ship, though it could probably be sold for a considerable amount of money.</text>
 							<remove name="CO_RAVAGER_CONTAINER_LEGEND"/>
 							<weapon name="CO_RAVAGER_CONTAINER_LEGEND_POOL"/>
@@ -207,130 +207,6 @@ It's unclear whether it will be safe to install this on your ship, though it cou
 		<event load="STORAGE_CHECK"/>
 	</choice>
 </event>
-
-
-
-	<!--<mod:findWithChildLike type="choice" child-type="text">
-		<mod:selector>Install the onboard lab.</mod:selector>
-		<mod-overwrite:text>Install the onboard lab. [TESTTTTT]</mod-overwrite:text>
-	</mod:findLike>
-	
-	CO_CHECK_NO_SIGIL_HEALING_MR_AND_NO_LAB_INSTALLED
-	
-	CO_CHECK_NO_SIGIL_HEALING_MR_AND_LAB_INSTALLED-->
-	
-	
-	
-	<!-- MR HEALING SIGIL EFFECT-->
-<![CDATA[
-
-<mod:findName type="event" name="STORAGE_CHECK_BUTTON">
-	<mod:findLike type="choice">
-		<mod:selector req="LAB_INSTALLED" lvl="0" hidden="true" blue="false" />
-		<mod:setAttributes req="CO_CHECK_NO_SIGIL_HEALING_MR_AND_NO_LAB_INSTALLED" hidden="true" blue="false" />
-		<mod-overwrite:text>Install the onboard lab.</mod-overwrite:text>
-	</mod:findLike>
-	<mod:findLike type="choice">
-		<mod:selector req="LAB_INSTALLED" lvl="1" hidden="true" blue="false" />
-		<mod:setAttributes req="CO_CHECK_NO_SIGIL_HEALING_MR_AND_LAB_INSTALLED" lvl="1" hidden="true" blue="false" />
-		<mod-overwrite:text>Check the onboard lab.</mod-overwrite:text>
-	</mod:findLike>
-	<mod-append:choice req="CO_SIGIL_HEALING_MR" hidden="true" blue="false">	
-		<text color="co_ravager_red">Something doesn't allow you to use the onboard lab.</text>
-		<event load="OPTION_INVALID"/>
-	</mod-append:choice>
-</mod:findName>
-
-<mod:findName type="event" name="STORAGE_CHECK_SYSTEM">
-	<!-- HR HEALING SIGIL EFFECT-->
-	<mod:findLike type="choice">
-		<mod:selector req="medbay" hidden="true" blue="false" />
-		<mod:setAttributes req="CO_CHECK_NO_SIGIL_HEALING_HR_AND_MEDBAY" hidden="true" blue="false" />
-		<mod-overwrite:text>Medbay.</mod-overwrite:text>
-	</mod:findLike>
-	<mod-append:choice req="CO_CHECK_SIGIL_HEALING_HR_AND_MEDBAY" hidden="true" blue="false">	
-		<text color="co_ravager_red">Something doesn't allow you to upgrade the Medbay.</text>
-		<event load="OPTION_INVALID"/>
-	</mod-append:choice>
-	<mod:findLike type="choice">
-		<mod:selector req="clonebay" hidden="true" blue="false" />
-		<mod:setAttributes req="CO_CHECK_NO_SIGIL_HEALING_HR_AND_CLONEBAY" hidden="true" blue="false" />
-		<mod-overwrite:text>Clonebay.</mod-overwrite:text>
-	</mod:findLike>
-	<mod-append:choice req="CO_CHECK_SIGIL_HEALING_HR_AND_CLONEBAY" hidden="true" blue="false">	
-		<text color="co_ravager_red">Something doesn't allow you to upgrade the Clonebay.</text>
-		<event load="OPTION_INVALID"/>
-	</mod-append:choice>
-</mod:findName>
-
-
-
-
-<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-														SIGIL MENU
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-<mod:findName type="event" name="STORAGE_CHECK_BUTTON">
-	<mod-append:choice blue="false">	
-		<text>Check active sigils.</text>
-		<event load="CO_LOAD_ACTIVE_SIGIL_CHECK"/>
-	</mod-append:choice>
-</mod:findName>
-]]>
-<![CDATA[
-<event name="CO_LOAD_ACTIVE_SIGIL_CHECK">
-	<loadEvent>CO_EVENT_ACTIVE_SIGIL_CHECK</loadEvent>
-</event>
-
-<event name="CO_EVENT_ACTIVE_SIGIL_CHECK">
-	<text>In this menu you can get information about the Sigils that are currently active. Only the one who put these Sigils on you can destroy them.</text>
-	<choice hidden="true">
-		<text>Low Risk Sigils.</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-	<choice hidden="true">
-		<text>Medium Risk Sigils.</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-	<choice hidden="true">
-		<text>High Risk Sigils.</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-	<choice hidden="true">
-		<text color="co_black">Curses.</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-	<choice hidden="true">
-		<text>Do something else.</text>
-		<event load="STORAGE_CHECK"/>
-	</choice>
-	
-	<choice req="PLAYER_SHIP_FLAGSHIP_UNLOCKED" lvl="1" hidden="true">
-		<text>Flagship</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-	<choice req="PLAYER_SHIP_FLAGSHIP_UNLOCKED" lvl="0" max_lvl="0" hidden="true">
-		<text>No Flagship</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-	<choice req="PLAYER_SHIP_FLAGSHIP_2_UNLOCKED" lvl="1" hidden="true">
-		<text>Flagship 2</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-	<choice req="PLAYER_SHIP_FLAGSHIP_2_UNLOCKED" lvl="0" max_lvl="0" hidden="true">
-		<text>No Flagsip 2</text>
-		<event load="OPTION_INVALID"/>
-	</choice>
-
-</event>
-]]>
-
-
-
-
-
-
 
 
 <!--

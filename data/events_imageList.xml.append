@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
 <imageList name="CO_SECTOR_START_LEGION">
 	<img w="1280" h="720">stars_special/bg_co_legion.png</img>
 	<img w="1280" h="720">stars_special/bg_co_ravager_quest.png</img>
+</imageList>
+-->
+
+<imageList name="CO_BG_RAVAGER_SPECIAL_MEETS">
+	<img w="1280" h="720">stars/stars_ravagers/co_bg_ravagers_space1.png</img>
+	<img w="1280" h="720">stars/stars_ravagers/co_bg_ravagers_space2.png</img>
+	<img w="1280" h="720">stars/stars_ravagers/co_bg_ravagers_space3.png</img>
+	<img w="1280" h="720">stars/stars_ravagers/co_bg_ravagers_space4.png</img>
+	<img w="1280" h="720">stars/stars_ravagers/co_bg_ravagers_space5.png</img>
 </imageList>

@@ -12,6 +12,7 @@
 
 <co_charon_shot volume="5">weapons/co_charon_shot.ogg</co_charon_shot>
 <co_adapter_shot volume="3">weapons/co_adapter_shot.ogg</co_adapter_shot>
+<co_adapter_cache_shot volume="2">weapons/co_adapter_shot.ogg</co_adapter_cache_shot>
 <co_thyrsus_shot volume="5">weapons/co_thyrsus_shot.ogg</co_thyrsus_shot>
 <co_kaiju_shot volume="5">weapons/co_kaiju_shot.ogg</co_kaiju_shot>
 <co_artemis_shot_1 volume="12">weapons/co_artemis_shot_1.ogg</co_artemis_shot_1>
